@@ -9,9 +9,12 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Properties;
+import java.util.TimeZone;
 import java.util.regex.Pattern;
 
 import javax.mail.Folder;
@@ -84,7 +87,7 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 	}
 
 	@Override
-	public DayReport readEmail() throws Exception {
+	public HashSet<DayReport> readEmail() throws Exception {
 
 		Properties prop = loadProperties();
 		String host = prop.getProperty("host");
@@ -113,15 +116,23 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 
 		Message[] message = folder.getMessages();
 		Collections.reverse(Arrays.asList(message));
-		DayReport dayReport = new DayReport();
-		dayReport.setPersonId(((InternetAddress) message[0].getFrom()[0])
-				.getAddress());
-		dayReport.setDate(message[0].getSentDate());
-		TaskReport report;
-		List<TaskReport> reportList = new ArrayList<TaskReport>();
+		HashSet<DayReport> dayReportSet = new HashSet<DayReport>();
+
 		// Display message.
 		String body;
 		for (int i = 0; i < message.length; i++) {
+			DayReport dayReport = null;
+			dayReport = new DayReport();
+			dayReport.setPersonId(((InternetAddress) message[i].getFrom()[0])
+					.getAddress());
+			Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT"));
+			calendar.setTime(message[i].getSentDate());
+			
+			dayReport.setDate(message[i].getSentDate());
+			TaskReport report = null;
+			List<TaskReport> reportList = null;
+			reportList = new ArrayList<TaskReport>();
+			
 			body = "";
 			Object content = message[i].getContent();
 			if (content instanceof java.lang.String) {
@@ -168,27 +179,34 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 					reportList.add(report);
 				}
 			}
-
+			dayReport.setReportList(reportList);
+			dayReportSet.add(dayReport);
 		}
-		dayReport.setReportList(reportList);
-		return dayReport;
+		
+		return dayReportSet;
 	}
 
 	@Override
-	public void convertToXml(DayReport dayReport) throws Exception {
-		
+	public void convertToXml(HashSet<DayReport> dayReportSet) throws Exception {
+		Properties prop = loadProperties();
+		for (DayReport dayReport : dayReportSet) {
+		path = prop.getProperty("path");
+		File dir = null;
+		File file = null;
 		path += dayReport.getPersonId();
-		File f = new File(path);
-		if (!f.exists()) {
-			f.mkdirs();
+		dir = new File(path);
+		if (!dir.exists()) {
+			dir.mkdirs();
 		}
 		String date = new SimpleDateFormat("dd.MM.YY").format(dayReport
 				.getDate());
-		File file = new File(path + "/report.from." + date + ".xml");
+		file = new File(path + "/report.from." + date + ".xml");
 
 		logger.info("Report created - "+path + "/report.from." + date + ".xml");
 		marshaller.marshal(dayReport, file);
-
+		}
 	}
+
+
 
 }

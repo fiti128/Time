@@ -2,6 +2,7 @@ package ru.retbansk.utils.scheduled.impl;
 
 
 
+import java.io.File;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Properties;
@@ -22,6 +23,7 @@ public class ReadEmailAndConvertToXmlImplTest {
 	public static String PATH = "C:/XmlReports/";
 	public static String CONTINUE = "yes";
 	private static ReadEmailAndConvertToXmlSpringImpl reader;
+	public static HashSet<DayReport> dayReportSet;
 	
 	@BeforeClass
 	public static void beforeClass() {
@@ -40,23 +42,37 @@ public class ReadEmailAndConvertToXmlImplTest {
 	
 	@Test
 	public void readEmailTest() throws Exception {
-		HashSet<DayReport> dayReportSet = reader.readEmail();
+		dayReportSet = reader.readEmail();
 		Assert.assertNotNull(dayReportSet);
 		Assert.assertEquals(2, dayReportSet.size());
-		DayReport fromLegres;
-		DayReport fromKirill;
+		DayReport fromLegres = null;
+		DayReport fromKirill = null;
 		Iterator<DayReport> iterator = dayReportSet.iterator();
 		while (iterator.hasNext()) {
-			if (iterator.next().getPersonId() == "tr-legres@rambler.ru") fromLegres = iterator.next();
-			if (iterator.next().getPersonId() == "kirill.iliashovitch@yandex.ru") fromKirill = iterator.next();
-		}
-		Assert.assertNotNull(fromLegres);
+			fromLegres = iterator.next();
+			if (fromLegres.getPersonId().equals("tr-legres@rambler.ru") ) {
+				fromKirill = iterator.next();
+			}
+			else {
+				fromKirill = fromLegres;
+				fromLegres = iterator.next();
+			}
+					}
 		Assert.assertNotNull(fromKirill);
+		Assert.assertNotNull(fromLegres);
+		Assert.assertEquals("tr-legres@rambler.ru", fromLegres.getPersonId());
 		Assert.assertEquals(2, fromLegres.getReportList().size());
 		Assert.assertEquals(1, fromKirill.getReportList().size());
 		Assert.assertEquals("ел", fromLegres.getReportList().get(0).getWorkDescription());
 		Assert.assertEquals(4, fromKirill.getReportList().get(0).getElapsedTime());
 		
 	}
-
+	
+	@Test
+	public void createFileTest() throws Exception {
+		reader.convertToXml(dayReportSet);
+		Assert.assertTrue(new File("C:/XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml").isFile());
+		
+		
+	}
 }

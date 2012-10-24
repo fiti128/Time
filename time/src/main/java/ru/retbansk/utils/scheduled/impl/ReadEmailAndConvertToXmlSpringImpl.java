@@ -55,13 +55,13 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 	public Properties loadProperties() throws Exception {
 		Properties prop = new Properties();
 		InputStream inputStream = null;
-		
+		// At first, program will try to read external properties
 		try {
 			inputStream = new FileInputStream("email.properties");
 			prop.load(inputStream);
 		} catch (FileNotFoundException e) {
 		}
-
+		// If nothing there - internal
 		if (inputStream == null)
 			inputStream = prop.getClass().getResourceAsStream(
 					"/email.properties");
@@ -189,20 +189,21 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 	public void convertToXml(HashSet<DayReport> dayReportSet) throws Exception {
 		Properties prop = loadProperties();
 		for (DayReport dayReport : dayReportSet) {
-		path = prop.getProperty("path");
-		File dir = null;
-		File file = null;
-		path += dayReport.getPersonId();
-		dir = new File(path);
-		if (!dir.exists()) {
-			dir.mkdirs();
-		}
-		String date = new SimpleDateFormat("dd.MM.YY").format(dayReport
-				.getCalendar().getTime());
-		file = new File(path + "/report.from." + date + ".xml");
+			path = prop.getProperty("path");
+			File dir = null;
+			File file = null;
+			path += dayReport.getPersonId();
+			dir = new File(path);
+			if (!dir.exists()) {
+				dir.mkdirs();
+			}
+			String date = new SimpleDateFormat("dd.MM.YY").format(dayReport
+					.getCalendar().getTime());
+			file = new File(path + "/report.from." + date + ".xml");
 
-		logger.info("Report created - "+path + "/report.from." + date + ".xml");
-		marshaller.marshal(dayReport, file);
+			logger.info("Report created - " + path + "/report.from." + date
+					+ ".xml");
+			marshaller.marshal(dayReport, file);
 		}
 	}
 

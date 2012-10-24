@@ -127,8 +127,7 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 					.getAddress());
 			Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT"));
 			calendar.setTime(message[i].getSentDate());
-			
-			dayReport.setDate(message[i].getSentDate());
+			dayReport.setCalendar(calendar);
 			TaskReport report = null;
 			List<TaskReport> reportList = null;
 			reportList = new ArrayList<TaskReport>();
@@ -199,7 +198,7 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 			dir.mkdirs();
 		}
 		String date = new SimpleDateFormat("dd.MM.YY").format(dayReport
-				.getDate());
+				.getCalendar());
 		file = new File(path + "/report.from." + date + ".xml");
 
 		logger.info("Report created - "+path + "/report.from." + date + ".xml");

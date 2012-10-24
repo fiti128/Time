@@ -1,5 +1,6 @@
 package ru.retbansk.mail.domain;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -9,7 +10,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name="DayReport")
 public class DayReport {
-	private Date date;
+	private Calendar calendar;
 	
 	private String personId;
 	private List<TaskReport> reportList;
@@ -31,6 +32,13 @@ public class DayReport {
 		if (getClass() != obj.getClass())
 			return false;
 		DayReport other = (DayReport) obj;
+		if (calendar == null) {
+			if (other.calendar != null)
+				return false;
+		} else if ((calendar.get(Calendar.DAY_OF_MONTH) != other.calendar.get(Calendar.DAY_OF_MONTH)) ||
+				 (calendar.get(Calendar.MONTH) != other.calendar.get(Calendar.MONTH)) ||
+				 (calendar.get(Calendar.YEAR) != other.calendar.get(Calendar.YEAR)))
+			return false;
 		if (personId == null) {
 			if (other.personId != null)
 				return false;
@@ -52,11 +60,12 @@ public class DayReport {
 	public void setReportList(List<TaskReport> reportList) {
 		this.reportList = reportList;
 	}
-	public Date getDate() {
-		return date;
+	public Calendar getCalendar() {
+		return calendar;
 	}
-	public void setDate(Date date) {
-		this.date = date;
+	public void setCalendar(Calendar calendar) {
+		this.calendar = calendar;
 	}
+
 	
 }

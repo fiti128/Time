@@ -1,0 +1,30 @@
+// Details schema
+User << Human >>
+User -> (email.properties): configure
+
+note right of (email.properties)
+	host
+    user
+    password
+    path
+end note
+
+(Start) .. Application
+
+note "mvn install\nmvn assembly:single\ncd target\njava - jar time-1.0.0-RELEASE.jar" as N2
+User -- N2
+N2 --> (Start)
+(ScheduledProcess) --> (process): every minute
+(process) ..> (email.properties): 1)read
+(Email) <.. (process) : 2)read
+(process) -> (DayReport): 3)create XML file
+
+Application -> (ScheduledProcess)
+
+// Simple
+User << Human >>
+Application << Program >>
+User ..> (email.properties): configure
+User -> Application: run
+
+Application --> (XmlReport): create

@@ -20,6 +20,12 @@ public class DayReport {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result
+				+ ((calendar == null) ? 0 : calendar.get(Calendar.DAY_OF_MONTH));
+		result = prime * result
+				+ ((calendar == null) ? 0 : calendar.get(Calendar.MONTH));
+		result = prime * result
+				+ ((calendar == null) ? 0 : calendar.get(Calendar.YEAR));
+		result = prime * result
 				+ ((personId == null) ? 0 : personId.hashCode());
 		return result;
 	}

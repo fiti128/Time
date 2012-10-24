@@ -8,8 +8,13 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Properties;
+import java.util.TimeZone;
 
 import javax.mail.Folder;
 import javax.mail.Message;
@@ -39,13 +44,13 @@ public class ReadEmailAndConvertToXmlImpl implements ReadEmailAndConvertToXml {
 	public Properties loadProperties() throws Exception {
 		Properties prop = new Properties();
 		InputStream inputStream = null;
-		
+		// At first, program will try to read external properties
 		try {
 			inputStream = new FileInputStream("email.properties");
 			prop.load(inputStream);
 		} catch (FileNotFoundException e) {
 		}
-
+		// If nothing there - internal
 		if (inputStream == null)
 			inputStream = prop.getClass().getResourceAsStream(
 					"/email.properties");
@@ -53,7 +58,6 @@ public class ReadEmailAndConvertToXmlImpl implements ReadEmailAndConvertToXml {
 		prop.load(inputStream);
 		if (inputStream != null)
 			inputStream.close();
-		
 		try {
 			if (prop.getProperty("continue").equals("no")){
 				logger.info("Program was stopped by the User");
@@ -72,7 +76,7 @@ public class ReadEmailAndConvertToXmlImpl implements ReadEmailAndConvertToXml {
 	}
 
 	@Override
-	public DayReport readEmail() throws Exception {
+	public HashSet<DayReport> readEmail() throws Exception {
 
 		Properties prop = loadProperties();
 		String host = prop.getProperty("host");
@@ -100,15 +104,23 @@ public class ReadEmailAndConvertToXmlImpl implements ReadEmailAndConvertToXml {
 		folder.open(Folder.READ_ONLY);
 
 		Message[] message = folder.getMessages();
-		DayReport dayReport = new DayReport();
-		dayReport.setPersonId(((InternetAddress) message[0].getFrom()[0])
-				.getAddress());
-		dayReport.setDate(message[0].getSentDate());
-		TaskReport report;
-		List<TaskReport> reportList = new ArrayList<TaskReport>();
+		Collections.reverse(Arrays.asList(message));
+		HashSet<DayReport> dayReportSet = new HashSet<DayReport>();
+
 		// Display message.
 		String body;
 		for (int i = 0; i < message.length; i++) {
+			DayReport dayReport = null;
+			dayReport = new DayReport();
+			dayReport.setPersonId(((InternetAddress) message[i].getFrom()[0])
+					.getAddress());
+			Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT"));
+			calendar.setTime(message[i].getSentDate());
+			dayReport.setCalendar(calendar);
+			TaskReport report = null;
+			List<TaskReport> reportList = null;
+			reportList = new ArrayList<TaskReport>();
+			
 			body = "";
 			Object content = message[i].getContent();
 			if (content instanceof java.lang.String) {
@@ -155,36 +167,44 @@ public class ReadEmailAndConvertToXmlImpl implements ReadEmailAndConvertToXml {
 					reportList.add(report);
 				}
 			}
-
+			dayReport.setReportList(reportList);
+			dayReportSet.add(dayReport);
 		}
-		dayReport.setReportList(reportList);
-		return dayReport;
+		
+		return dayReportSet;
 	}
 
 	@Override
-	public void convertToXml(DayReport dayReport) throws Exception {
+	public void convertToXml(HashSet<DayReport> dayReportSet) throws Exception {
+		Properties prop = loadProperties();
+		for (DayReport dayReport : dayReportSet) {
+			path = prop.getProperty("path");
+			File dir = null;
+			File file = null;
+			path += dayReport.getPersonId();
+			dir = new File(path);
+			if (!dir.exists()) {
+				dir.mkdirs();
+			}
+			String date = new SimpleDateFormat("dd.MM.YY").format(dayReport
+					.getCalendar().getTime());
+			file = new File(path + "/report.from." + date + ".xml");
+
+			logger.info("Report created - " + path + "/report.from." + date
+					+ ".xml");
+	
 		JAXBContext context = JAXBContext.newInstance(DayReport.class);
-		Marshaller m = context.createMarshaller();
+		Marshaller m = context.createMarshaller();	
+		
+		/*		Uncomment this to see xml in console
+		 * 		PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
+				m.marshal(dayReport, out);
+				
+		*/	
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 		m.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
-
-/*		Uncomment this to see xml in console
- * 		PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
-		m.marshal(dayReport, out);
-*/
-
-		path += dayReport.getPersonId();
-		File f = new File(path);
-		if (!f.exists()) {
-			f.mkdirs();
-		}
-		String date = new SimpleDateFormat("dd.MM.YY").format(dayReport
-				.getDate());
-		File file = new File(path + "/report.from." + date + ".xml");
-
-		logger.info("Report created - "+path + "/report.from." + date + ".xml");
 		m.marshal(dayReport, file);
 
 	}
-
+	}
 }

@@ -2,6 +2,8 @@ package ru.retbansk.utils.scheduled.impl;
 
 
 
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Properties;
 
 import org.junit.Assert;
@@ -38,10 +40,23 @@ public class ReadEmailAndConvertToXmlImplTest {
 	
 	@Test
 	public void readEmailTest() throws Exception {
-		DayReport dayReport = reader.readEmail();
-		Assert.assertNotNull(dayReport);
-		Assert.assertEquals("tr-legres@rambler.ru", dayReport.getPersonId());
-		Assert.assertEquals(4, dayReport.getReportList().size());
+		HashSet<DayReport> dayReportSet = reader.readEmail();
+		Assert.assertNotNull(dayReportSet);
+		Assert.assertEquals(2, dayReportSet.size());
+		DayReport fromLegres;
+		DayReport fromKirill;
+		Iterator<DayReport> iterator = dayReportSet.iterator();
+		while (iterator.hasNext()) {
+			if (iterator.next().getPersonId() == "tr-legres@rambler.ru") fromLegres = iterator.next();
+			if (iterator.next().getPersonId() == "kirill.iliashovitch@yandex.ru") fromKirill = iterator.next();
+		}
+		Assert.assertNotNull(fromLegres);
+		Assert.assertNotNull(fromKirill);
+		Assert.assertEquals(2, fromLegres.getReportList().size());
+		Assert.assertEquals(1, fromKirill.getReportList().size());
+		Assert.assertEquals("ел", fromLegres.getReportList().get(0).getWorkDescription());
+		Assert.assertEquals(4, fromKirill.getReportList().get(0).getElapsedTime());
+		
 	}
 
 }

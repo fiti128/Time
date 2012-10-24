@@ -1,15 +1,16 @@
 package ru.retbansk.mail.domain;
 
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 @XmlRootElement(name="DayReport")
 public class DayReport {
+	
 	private Calendar calendar;
 	
 	private String personId;
@@ -66,9 +67,11 @@ public class DayReport {
 	public void setReportList(List<TaskReport> reportList) {
 		this.reportList = reportList;
 	}
+	
 	public Calendar getCalendar() {
 		return calendar;
 	}
+	@XmlTransient
 	public void setCalendar(Calendar calendar) {
 		this.calendar = calendar;
 	}

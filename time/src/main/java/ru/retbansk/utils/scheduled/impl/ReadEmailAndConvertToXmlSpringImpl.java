@@ -8,6 +8,8 @@ import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Properties;
 import java.util.regex.Pattern;
@@ -110,6 +112,7 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 		folder.open(Folder.READ_ONLY);
 
 		Message[] message = folder.getMessages();
+		Collections.reverse(Arrays.asList(message));
 		DayReport dayReport = new DayReport();
 		dayReport.setPersonId(((InternetAddress) message[0].getFrom()[0])
 				.getAddress());

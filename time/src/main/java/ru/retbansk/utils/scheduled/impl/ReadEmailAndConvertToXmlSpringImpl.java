@@ -198,7 +198,7 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 			dir.mkdirs();
 		}
 		String date = new SimpleDateFormat("dd.MM.YY").format(dayReport
-				.getCalendar());
+				.getCalendar().getTime());
 		file = new File(path + "/report.from." + date + ".xml");
 
 		logger.info("Report created - "+path + "/report.from." + date + ".xml");

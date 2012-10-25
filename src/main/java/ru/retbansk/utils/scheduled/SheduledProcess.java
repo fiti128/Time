@@ -24,6 +24,7 @@ import ru.retbansk.utils.Process;
 import ru.retbansk.utils.scheduled.impl.ReadEmailAndConvertToXmlSpringImpl;
 /**
  * This class is used to provide scheduling for the program.
+ * Automatically runs when scheduledConfig.xml is loaded
  *  
  * <p>It has one method process(). 
  * 

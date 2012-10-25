@@ -19,6 +19,9 @@ package ru.retbansk.mail.domain;
 import java.util.Date;
 
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import ru.retbansk.utils.marshaller.NiceDateAdapter;
 
 @XmlRootElement(name = "Report")
 public class TaskReport {
@@ -27,6 +30,7 @@ public class TaskReport {
 	private String status;
 	private int elapsedTime;
 
+	@XmlJavaTypeAdapter(NiceDateAdapter.class)
 	public Date getDate() {
 		return date;
 	}

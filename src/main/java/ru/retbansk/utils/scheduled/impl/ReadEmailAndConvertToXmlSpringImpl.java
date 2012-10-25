@@ -141,7 +141,7 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 			dayReport = new DayReport();
 			dayReport.setPersonId(((InternetAddress) message[i].getFrom()[0])
 					.getAddress());
-			Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT"));
+			Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+3"));
 			calendar.setTime(message[i].getSentDate());
 			dayReport.setCalendar(calendar);
 			TaskReport report = null;
@@ -185,6 +185,26 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 			for (String string : lines) {
 				if (string.matches(".+,.+,.+")) {
 					String split[] = string.split(",");
+					report = new TaskReport();
+					report.setDate(message[i].getSentDate());
+					report.setWorkDescription(split[0].trim());
+					report.setStatus(split[1].trim());
+					report.setElapsedTime(Integer.valueOf(split[2].trim())
+							.intValue());
+					reportList.add(report);
+				}
+				if (string.matches(".+[.].+[.].+")) {
+					String split[] = string.split("\\.");
+					report = new TaskReport();
+					report.setDate(message[i].getSentDate());
+					report.setWorkDescription(split[0].trim());
+					report.setStatus(split[1].trim());
+					report.setElapsedTime(Integer.valueOf(split[2].trim())
+							.intValue());
+					reportList.add(report);
+				}
+				if (string.matches(".+[/].+[/].+")) {
+					String split[] = string.split("/");
 					report = new TaskReport();
 					report.setDate(message[i].getSentDate());
 					report.setWorkDescription(split[0].trim());

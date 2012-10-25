@@ -25,13 +25,12 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  * Main domain class. 
- * <p>First point of the program
- *
+ *  *
  * @author Siarhei Yanusheuski
  * @since 25.10.2012
  */
 @XmlRootElement(name="DayReport")
-public class DayReport {
+public class DayReport implements Comparable<DayReport> {
 	
 	private Calendar calendar;
 	
@@ -96,6 +95,10 @@ public class DayReport {
 	@XmlTransient
 	public void setCalendar(Calendar calendar) {
 		this.calendar = calendar;
+	}
+	@Override
+	public int compareTo(DayReport o) {
+		return calendar.compareTo(o.getCalendar());
 	}
 
 	

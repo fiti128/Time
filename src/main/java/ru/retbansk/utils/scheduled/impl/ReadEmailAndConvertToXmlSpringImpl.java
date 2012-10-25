@@ -204,10 +204,11 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 	@Override
 	public void convertToXml(HashSet<DayReport> dayReportSet) throws Exception {
 		Properties prop = loadProperties();
+		File dir;
+		File file;
+		// Writing file for every DayReport in Set
 		for (DayReport dayReport : dayReportSet) {
 			path = prop.getProperty("path");
-			File dir = null;
-			File file = null;
 			path += dayReport.getPersonId();
 			dir = new File(path);
 			if (!dir.exists()) {

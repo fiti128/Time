@@ -23,6 +23,13 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
+/**
+ * Main domain class. 
+ * <p>First point of the program
+ *
+ * @author Siarhei Yanusheuski
+ * @since 25.10.2012
+ */
 @XmlRootElement(name="DayReport")
 public class DayReport {
 	

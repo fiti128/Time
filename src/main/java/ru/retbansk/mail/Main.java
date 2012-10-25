@@ -20,10 +20,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * Main class that starts everything. 
- * <p>First point of the program
+ * <p>First point of the program. Run ScheduledProcess
+ * 
  *
  * @author Siarhei Yanusheuski
  * @since 25.10.2012
+ * @see ru.retbansk.utils.scheduled.SheduledProcess
  */
 public class Main {
 

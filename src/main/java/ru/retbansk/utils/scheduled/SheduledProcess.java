@@ -22,12 +22,26 @@ import org.springframework.stereotype.Service;
 
 import ru.retbansk.utils.Process;
 import ru.retbansk.utils.scheduled.impl.ReadEmailAndConvertToXmlSpringImpl;
-
+/**
+ * This class is used to provide scheduling for the program.
+ *  
+ * <p>It has one method process(). 
+ * 
+ *
+ * @author Siarhei Yanusheuski
+ * @since 25.10.2012
+ * @see ru.retbansk.utils.scheduled.impl.ReadEmailAndConvertToXmlSpringImpl
+ */
 @Service
 public class SheduledProcess implements Process {
 	protected static Logger logger = Logger.getLogger("service");
 	private ReadEmailAndConvertToXml reader = new ReadEmailAndConvertToXmlSpringImpl();
 
+	/**
+	 * Process() method would be invoked every minute with a fixed delay, meaning that the period will be measured from the completion time of each preceding invocation
+	 * @see ru.retbansk.utils.Process#process()
+	 * @see ru.retbansk.utils.scheduled.impl.ReadEmailAndConvertToXmlSpringImpl#execute()
+	 */
 	@Scheduled(fixedDelay = 60000)
 	public void process() {
 		logger.info("Start schedule. Reading Email...");

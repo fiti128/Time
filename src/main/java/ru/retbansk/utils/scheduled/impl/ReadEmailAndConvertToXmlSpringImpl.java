@@ -47,8 +47,11 @@ import javax.mail.internet.MimeBodyPart;
 
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 
 
@@ -60,6 +63,7 @@ import ru.retbansk.mail.domain.DayReport;
 import ru.retbansk.mail.domain.TaskReport;
 import ru.retbansk.utils.marshaller.Jaxb2Marshaller;
 import ru.retbansk.utils.marshaller.Marshaller;
+import ru.retbansk.utils.scheduled.DynamicSchedule;
 import ru.retbansk.utils.scheduled.ReadEmailAndConvertToXml;
 
 
@@ -69,6 +73,7 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 	private ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 	private Marshaller marshaller = (Jaxb2Marshaller) context.getBean("marshaller");
 
+	
 	public Properties loadProperties() throws Exception {
 		Properties prop = new Properties();
 		InputStream inputStream = null;

@@ -27,6 +27,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Properties;
@@ -129,10 +130,13 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 
 		// Open the Folder.
 		folder.open(Folder.READ_ONLY);
-
+		HashSet<DayReport> dayReportSet = new HashSet<DayReport>();
+		try {
+			
+		
 		Message[] message = folder.getMessages();
 		Collections.reverse(Arrays.asList(message));
-		HashSet<DayReport> dayReportSet = new HashSet<DayReport>();
+
 
 		// Display message.
 		String body;
@@ -144,7 +148,6 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 			Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+3"));
 			calendar.setTime(message[i].getSentDate());
 			dayReport.setCalendar(calendar);
-			TaskReport report = null;
 			List<TaskReport> reportList = null;
 			reportList = new ArrayList<TaskReport>();
 			
@@ -179,43 +182,15 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 					}
 				}
 			}
-
-			String lines[] = body.split("[\\r\\n]+");
-
-			for (String string : lines) {
-				if (string.matches(".+,.+,.+")) {
-					String split[] = string.split(",");
-					report = new TaskReport();
-					report.setDate(message[i].getSentDate());
-					report.setWorkDescription(split[0].trim());
-					report.setStatus(split[1].trim());
-					report.setElapsedTime(Integer.valueOf(split[2].trim())
-							.intValue());
-					reportList.add(report);
-				}
-				if (string.matches(".+[.].+[.].+")) {
-					String split[] = string.split("\\.");
-					report = new TaskReport();
-					report.setDate(message[i].getSentDate());
-					report.setWorkDescription(split[0].trim());
-					report.setStatus(split[1].trim());
-					report.setElapsedTime(Integer.valueOf(split[2].trim())
-							.intValue());
-					reportList.add(report);
-				}
-				if (string.matches(".+[/].+[/].+")) {
-					String split[] = string.split("/");
-					report = new TaskReport();
-					report.setDate(message[i].getSentDate());
-					report.setWorkDescription(split[0].trim());
-					report.setStatus(split[1].trim());
-					report.setElapsedTime(Integer.valueOf(split[2].trim())
-							.intValue());
-					reportList.add(report);
-				}
-			}
+			//Reads the body of the message and return list of valid reports
+			reportList = giveValidReports(body,message[i].getSentDate());
 			dayReport.setReportList(reportList);
 			dayReportSet.add(dayReport);
+		}
+		}
+		finally {
+    		folder.close(false); // true tells the mail server to expunge deleted messages.
+    		store.close();
 		}
 		
 		return dayReportSet;
@@ -243,7 +218,46 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 			marshaller.marshal(dayReport, file);
 		}
 	}
+	
+	public List<TaskReport> giveValidReports(String body, Date reportDate) {
+		List<TaskReport> reportList = new ArrayList<TaskReport>();
+		TaskReport report;
+		String lines[] = body.split("[\\r\\n]+");
 
+		for (String string : lines) {
+			if (string.matches(".+,.+,.+")) {
+				String split[] = string.split(",");
+				report = new TaskReport();
+				report.setDate(reportDate);
+				report.setWorkDescription(split[0].trim());
+				report.setStatus(split[1].trim());
+				report.setElapsedTime(Integer.valueOf(split[2].trim())
+						.intValue());
+				reportList.add(report);
+			}
+			if (string.matches(".+[.].+[.].+")) {
+				String split[] = string.split("\\.");
+				report = new TaskReport();
+				report.setDate(reportDate);
+				report.setWorkDescription(split[0].trim());
+				report.setStatus(split[1].trim());
+				report.setElapsedTime(Integer.valueOf(split[2].trim())
+						.intValue());
+				reportList.add(report);
+			}
+			if (string.matches(".+[/].+[/].+")) {
+				String split[] = string.split("/");
+				report = new TaskReport();
+				report.setDate(reportDate);
+				report.setWorkDescription(split[0].trim());
+				report.setStatus(split[1].trim());
+				report.setElapsedTime(Integer.valueOf(split[2].trim())
+						.intValue());
+				reportList.add(report);
+			}
+		}
+		return reportList;
+	}
 
 
 }

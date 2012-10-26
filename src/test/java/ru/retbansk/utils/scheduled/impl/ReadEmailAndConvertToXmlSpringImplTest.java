@@ -16,15 +16,23 @@
 package ru.retbansk.utils.scheduled.impl;
 
 import java.io.File;
+import java.io.IOException;
 
 
 import java.util.HashSet;
 import java.util.Iterator;
 
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 import java.util.Properties;
 import java.util.SortedSet;
+import java.util.TimeZone;
 import java.util.TreeSet;
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
+import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -32,7 +40,8 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import ru.retbansk.mail.domain.DayReport;
-import ru.retbansk.utils.scheduled.ReadEmailAndConvertToXml;
+import ru.retbansk.mail.domain.TaskReport;
+
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {
@@ -47,17 +56,31 @@ public class ReadEmailAndConvertToXmlSpringImplTest  {
 	public static String CONTINUE = "yes";
 	public static String TEST_STRING = "ел";
 	public static String TEST_STRING2 = "nothing actually";
-	public static ReadEmailAndConvertToXml reader;
+	public static String BODY = "helping Google with Android, in process, 7\r\nAbrakadabraaaaaaaaaaaaaa tata\r\nnothing actually. done. 3";
+	public static ReadEmailAndConvertToXmlSpringImpl reader;
 	public static HashSet<DayReport> dayReportSet;
+	protected static Logger logger = Logger.getLogger("service");
 	
 	@BeforeClass
 	public static void beforeClass() {
 		reader = new ReadEmailAndConvertToXmlSpringImpl();
-		//Need to rewrite this
-		try {
-			dayReportSet = reader.readEmail();
-		} catch (Exception e) {
-		}
+				
+		DayReport dayReport = new DayReport();
+		dayReport.setPersonId(USER2);
+		Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+3"));
+		calendar.set(2012, Calendar.OCTOBER, 18);
+		dayReport.setCalendar(calendar);
+		List<TaskReport> taskList = new ArrayList<TaskReport>();
+		TaskReport taskReport = new TaskReport();
+		taskReport.setDate(calendar.getTime());
+		taskReport.setElapsedTime(1);
+		taskReport.setStatus(TEST_STRING);
+		taskReport.setWorkDescription(TEST_STRING2);
+		taskList.add(taskReport);
+		dayReport.setReportList(taskList);
+		dayReportSet = new HashSet<DayReport>();
+		dayReportSet.add(dayReport);
+		
 		
 	}
 	@Test
@@ -110,9 +133,26 @@ public class ReadEmailAndConvertToXmlSpringImplTest  {
 		Assert.assertNotNull(dayReportSet);
 		reader.convertToXml(dayReportSet);
 		Assert.assertTrue(new File(FILE_PATH).isFile());
-		FileUtils.deleteDirectory(new File(PATH));
+
 		
 		
+	}
+	
+	@Test
+	public void giveValidReportsTest() {
+		Date date = new Date();
+		List<TaskReport> reportList = reader.giveValidReports(BODY, date);
+		Assert.assertNotNull(reportList);
+		Assert.assertEquals(2,reportList.size());
+		Assert.assertEquals(TEST_STRING2, reportList.get(1).getWorkDescription());
+	}
+	@AfterClass
+	public  static void afterClass() {
+		try {
+			FileUtils.deleteDirectory(new File(PATH));
+		} catch (IOException e) {
+			logger.info("Plz close all windows that are related with "+PATH);
+		}
 	}
 }
 

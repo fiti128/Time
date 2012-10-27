@@ -29,12 +29,15 @@ public class ReplyManagerSimpleImpl implements ReplyManager {
 	public void placeReply(Reply reply) throws Exception {
 
 		SimpleMailMessage msg = new SimpleMailMessage();
-		;
 		msg.setTo(reply.getEmailAddress());
+		msg.setReplyTo(reply.getEmailAddress());
 		msg.setFrom(user);
 		msg.setSubject("RE: Day Report");
 		msg.setText("This is an automated email. Do not reply.\n" +
-				"Your day report is recieved and saved . You are allowed to make modifications till 23:59 GMT. Just send new report, the old one will be deleted.\nConverted xml look like:\n"+reply.getXml());
+				"Your day report is recieved and saved ." +
+				" You are allowed to make modifications till 23:59 GMT." +
+				" Just send new report, the old one will be deleted.\n" +
+				"Converted report look like:\n"+reply.getXml());
 		
 		
 	

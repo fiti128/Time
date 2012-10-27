@@ -75,6 +75,7 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 	private String path;
 	private ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 	private Marshaller marshaller = (Jaxb2Marshaller) context.getBean("marshaller");
+	private List<Reply> replyList = new ArrayList<Reply>();
 
 	
 	public Properties loadProperties() throws Exception {
@@ -107,7 +108,14 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 
 	@Override
 	public void execute() throws Exception {
-		convertToXml(readEmail());
+		HashSet<DayReport> dayReportSet = readEmail();
+		convertToXml(dayReportSet);
+		ReplyManager man = new ReplyManagerSimpleImpl();
+		for (Reply reply1 : replyList) {
+			
+			man.placeReply(reply1);
+		}
+		replyList.clear();
 
 	}
 
@@ -192,8 +200,10 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 			}
 			//Reads the body of the message and return list of valid reports
 			reportList = giveValidReports(body,message[i].getSentDate());
+			if (reportList.size() > 0) {
 			dayReport.setReportList(reportList);
 			dayReportSet.add(dayReport);
+			}
 		}
 		}
 		finally {
@@ -210,8 +220,7 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 		File dir;
 		File file;
 		String xml;
-		Reply reply;
-		ReplyManager man = new ReplyManagerSimpleImpl();
+		
 		// Writing file for every DayReport in Set
 		for (DayReport dayReport : dayReportSet) {
 			path = prop.getProperty("path");
@@ -226,12 +235,14 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 
 			logger.info("Report created - " + path + "/report.from." + date
 					+ ".xml");
+			
 			xml = marshaller.marshal(dayReport, file);
-			reply = new Reply();
+			Reply reply = new Reply();
 			reply.setXml(xml);
 			reply.setEmailAddress(dayReport.getPersonId());
 			reply.setValidNumber(dayReport.getReportList().size());
-			man.placeReply(reply);
+			replyList.add(reply);
+			
 		}
 	}
 	
@@ -241,7 +252,7 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 		String lines[] = body.split("[\\r\\n]+");
 
 		for (String string : lines) {
-			if (string.matches(".+,.+,.+")) {
+			if (string.matches(".+,.+,[\\d|\\s]{1,3}")) {
 				String split[] = string.split(",");
 				report = new TaskReport();
 				report.setDate(reportDate);
@@ -251,7 +262,7 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 						.intValue());
 				reportList.add(report);
 			}
-			if (string.matches(".+[.].+[.].+")) {
+			if (string.matches(".+[.].+[.][\\d|\\s]{1,3}")) {
 				String split[] = string.split("\\.");
 				report = new TaskReport();
 				report.setDate(reportDate);
@@ -261,7 +272,7 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 						.intValue());
 				reportList.add(report);
 			}
-			if (string.matches(".+[/].+[/].+")) {
+			if (string.matches(".+[/].+[/][\\d|\\s]{1,3}")) {
 				String split[] = string.split("/");
 				report = new TaskReport();
 				report.setDate(reportDate);

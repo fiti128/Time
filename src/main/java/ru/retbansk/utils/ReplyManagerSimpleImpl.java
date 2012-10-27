@@ -17,10 +17,10 @@ public class ReplyManagerSimpleImpl implements ReplyManager {
 	private String user;
 	public ReplyManagerSimpleImpl() throws Exception {
 		Properties props = UsefulMethods.loadProperties();
-		mailSender.setHost("smtp.yandex.ru");
+		mailSender.setHost(props.getProperty("host.send"));
 		mailSender.setUsername(props.getProperty("user"));
 		mailSender.setPassword(props.getProperty("password"));
-		// 25 587
+		// 25 587 465ssl
 		mailSender.setPort(587);
 		user = props.getProperty("user");
 		
@@ -32,10 +32,10 @@ public class ReplyManagerSimpleImpl implements ReplyManager {
 		msg.setTo(reply.getEmailAddress());
 		msg.setReplyTo(reply.getEmailAddress());
 		msg.setFrom(user);
-		msg.setSubject("RE: Day Report");
+		msg.setSubject("RE: "+ (reply.getSubject() == null ? "" : reply.getSubject()));
 		msg.setText("This is an automated email. Do not reply.\n" +
 				"Your day report is recieved and saved ." +
-				" You are allowed to make modifications till 23:59 GMT." +
+				" You are allowed to make modifications till 23:59 GMT+3." +
 				" Just send new report, the old one will be deleted.\n" +
 				"Converted report look like:\n"+reply.getXml());
 		
@@ -48,4 +48,11 @@ public class ReplyManagerSimpleImpl implements ReplyManager {
         logger.error(ex.getMessage());
     }
     }
+	public JavaMailSenderImpl getMailSender() {
+		return mailSender;
+	}
+	public void setMailSender(JavaMailSenderImpl mailSender) {
+		this.mailSender = mailSender;
+	}
+	
 }   

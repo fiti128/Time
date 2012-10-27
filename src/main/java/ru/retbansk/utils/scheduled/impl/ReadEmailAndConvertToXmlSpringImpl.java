@@ -180,31 +180,28 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 					String disposition = part.getDisposition();
 
 					if (disposition == null) {
-						// Check if plain
 						MimeBodyPart mbp = (MimeBodyPart) part;
 						if (mbp.isMimeType("text/plain")) {
-							// Log.Debug("Mime type is plain");
-							body += (String) mbp.getContent();
+						body += (String) mbp.getContent();
 						}
 					} else if ((disposition != null)
 							&& (disposition.equals(Part.ATTACHMENT) || disposition
 									.equals(Part.INLINE))) {
-						// Check if plain
-						MimeBodyPart mbp = (MimeBodyPart) part;
+					MimeBodyPart mbp = (MimeBodyPart) part;
 						if (mbp.isMimeType("text/plain")) {
-							// Log.Debug("Mime type is plain");
 							body += (String) mbp.getContent();
 						}
 					}
 				}
 			}
 			//Reads the body of the message and return list of valid reports
-			reportList = giveValidReports(body,message[i].getSentDate());
+			reportList = giveValidReports(body, message[i].getSentDate());
 			if (reportList.size() > 0) {
-			dayReport.setReportList(reportList);
-			dayReportSet.add(dayReport);
+				dayReport.setSubject(message[i].getSubject());
+				dayReport.setReportList(reportList);
+				dayReportSet.add(dayReport);
+				}
 			}
-		}
 		}
 		finally {
     		folder.close(false); // true tells the mail server to expunge deleted messages.
@@ -241,6 +238,7 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 			reply.setXml(xml);
 			reply.setEmailAddress(dayReport.getPersonId());
 			reply.setValidNumber(dayReport.getReportList().size());
+			reply.setSubject(dayReport.getSubject());
 			replyList.add(reply);
 			
 		}

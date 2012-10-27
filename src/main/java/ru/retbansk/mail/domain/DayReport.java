@@ -33,10 +33,12 @@ import javax.xml.bind.annotation.XmlTransient;
 public class DayReport implements Comparable<DayReport> {
 	
 	private Calendar calendar;
-	
 	private String personId;
 	private List<TaskReport> reportList;
+	private String subject;
 	
+	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -101,5 +103,10 @@ public class DayReport implements Comparable<DayReport> {
 		return calendar.compareTo(o.getCalendar());
 	}
 
-	
+	public String getSubject() {
+		return subject;
+	}
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
 }

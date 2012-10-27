@@ -5,6 +5,7 @@ public class Reply {
 	private String emailAddress;
 	private int validNumber;
 	private String xml;
+	private String subject;
 
 	public String getEmailAddress() {
 		return emailAddress;
@@ -28,6 +29,14 @@ public class Reply {
 
 	public void setXml(String xml) {
 		this.xml = xml;
+	}
+
+	public String getSubject() {
+		return subject;
+	}
+
+	public void setSubject(String subject) {
+		this.subject = subject;
 	}
 
 }

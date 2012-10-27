@@ -26,7 +26,7 @@
             <property name="targetMethod" value="process" />
          </bean>
       </constructor-arg>
-      <constructor-arg value="3000" />
+      <constructor-arg value="60000" />
    </bean>
 
 </beans>

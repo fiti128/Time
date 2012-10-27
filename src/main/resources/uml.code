@@ -7,6 +7,7 @@ note right of (email.properties)
     user
     password
     path
+    schedule
 end note
 
 (Start) .. Application
@@ -14,12 +15,19 @@ end note
 note "mvn install\nmvn assembly:single\ncd target\njava - jar time-1.0.0-RELEASE.jar" as N2
 User -- N2
 N2 --> (Start)
-(ScheduledProcess) --> (process): every minute
-(process) ..> (email.properties): 1)read
-(Email) <.. (process) : 2)read
+
+note "by default runs every minute\nconfigurable at runtime\nby changing schedule in email.properties" as N3
+(ScheduledProcess) right- N3
+N3 --> (process)
+
+(process) ..> (email.properties): 1)read (everything configurable\n at runtime)
+(Email) <.. (process) : 2)read 
 (process) -> (DayReport): 3)create XML file
 
-Application -> (ScheduledProcess)
+Application -down-> (ScheduledProcess)
+(process) -> User : confirmation\n Email
+
+
 
 // Simple
 User << Human >>

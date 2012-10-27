@@ -59,8 +59,11 @@ import org.springframework.stereotype.Service;
 
 
 import ru.retbansk.mail.domain.DayReport;
+import ru.retbansk.mail.domain.Reply;
 
 import ru.retbansk.mail.domain.TaskReport;
+import ru.retbansk.utils.ReplyManager;
+import ru.retbansk.utils.ReplyManagerSimpleImpl;
 import ru.retbansk.utils.marshaller.Jaxb2Marshaller;
 import ru.retbansk.utils.marshaller.Marshaller;
 import ru.retbansk.utils.scheduled.DynamicSchedule;
@@ -206,6 +209,9 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 		Properties prop = loadProperties();
 		File dir;
 		File file;
+		String xml;
+		Reply reply;
+		ReplyManager man = new ReplyManagerSimpleImpl();
 		// Writing file for every DayReport in Set
 		for (DayReport dayReport : dayReportSet) {
 			path = prop.getProperty("path");
@@ -220,7 +226,12 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 
 			logger.info("Report created - " + path + "/report.from." + date
 					+ ".xml");
-			marshaller.marshal(dayReport, file);
+			xml = marshaller.marshal(dayReport, file);
+			reply = new Reply();
+			reply.setXml(xml);
+			reply.setEmailAddress(dayReport.getPersonId());
+			reply.setValidNumber(dayReport.getReportList().size());
+			man.placeReply(reply);
 		}
 	}
 	

@@ -33,6 +33,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import ru.retbansk.mail.domain.DayReport;
 import ru.retbansk.mail.domain.TaskReport;
+import ru.retbansk.utils.UsefulMethods;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {
@@ -81,7 +82,9 @@ public class Jaxb2MarshallerTest {
 		String xml = marshaller.marshal(dayReport,null);
 		System.out.println(xml);
 		Assert.assertNotNull(xml);
-		Assert.assertEquals(MARSHALLED_DAYREPORT, xml);
+		String prettyExpected = UsefulMethods.prettyFormat(MARSHALLED_DAYREPORT,4);
+		String prettyActual = UsefulMethods.prettyFormat(xml,4);
+		Assert.assertEquals(prettyExpected, prettyActual);
 
 	}
 

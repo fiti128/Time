@@ -2635,3 +2635,517 @@
  INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
  INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
  INFO [scheduler-1] (SheduledProcess.java:69) - End schedule. Next schedule in 1 minute.
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@144b9ff: startup date [Fri Oct 26 20:43:36 MSK 2012]; root of context hierarchy
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [ru/retbansk/mail/scheduledConfig.xml]
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1b7c9d1: defining beans [email,scheduleChanger,sheduledProcess,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAsyncAnnotationProcessor,org.springframework.context.annotation.internalScheduledAnnotationProcessor,scheduler,dynamicSchedule,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (PropertiesLoaderSupport.java:177) - Loading properties file from class path resource [email.properties]
+ INFO [main] (ExecutorConfigurationSupport.java:115) - Initializing ExecutorService  'scheduler'
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1888da5: startup date [Fri Oct 26 20:43:36 MSK 2012]; root of context hierarchy
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [applicationContext.xml]
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@e08014: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (Jaxb2Marshaller.java:436) - Creating JAXBContext with classes to be bound [class ru.retbansk.mail.domain.DayReport,class ru.retbansk.mail.domain.TaskReport]
+ INFO [main] (DynamicSchedule.java:37) - End of schedule. Next execution: Fri Oct 26 20:43:36 MSK 2012
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:37) - End of schedule. Next execution: Fri Oct 26 20:43:39 MSK 2012
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (DynamicSchedule.java:37) - End of schedule. Next execution: Fri Oct 26 20:43:49 MSK 2012
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:37) - End of schedule. Next execution: Fri Oct 26 20:44:06 MSK 2012
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:37) - End of schedule. Next execution: Fri Oct 26 20:44:16 MSK 2012
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:37) - End of schedule. Next execution: Fri Oct 26 20:44:26 MSK 2012
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:37) - End of schedule. Next execution: Fri Oct 26 20:44:36 MSK 2012
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:37) - End of schedule. Next execution: Fri Oct 26 20:46:16 MSK 2012
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:37) - End of schedule. Next execution: Fri Oct 26 20:47:56 MSK 2012
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@18346a3: startup date [Fri Oct 26 20:47:43 MSK 2012]; root of context hierarchy
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [ru/retbansk/mail/scheduledConfig.xml]
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@b8a28b: defining beans [email,scheduleChanger,sheduledProcess,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAsyncAnnotationProcessor,org.springframework.context.annotation.internalScheduledAnnotationProcessor,scheduler,dynamicSchedule,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (PropertiesLoaderSupport.java:177) - Loading properties file from class path resource [email.properties]
+ INFO [main] (ExecutorConfigurationSupport.java:115) - Initializing ExecutorService  'scheduler'
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1583afc: startup date [Fri Oct 26 20:47:43 MSK 2012]; root of context hierarchy
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [applicationContext.xml]
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@d5d62e: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (Jaxb2Marshaller.java:436) - Creating JAXBContext with classes to be bound [class ru.retbansk.mail.domain.DayReport,class ru.retbansk.mail.domain.TaskReport]
+ INFO [main] (DynamicSchedule.java:38) - End of schedule. Next execution: Fri Oct 26 20:47:43 MSK 2012.Delay is: 0minutes
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:38) - End of schedule. Next execution: Fri Oct 26 20:47:46 MSK 2012.Delay is: 0minutes
+ INFO [scheduler-1] (DynamicSchedule.java:23) - New delay is: 1minutes
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:38) - End of schedule. Next execution: Fri Oct 26 20:49:26 MSK 2012.Delay is: 1minutes
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:38) - End of schedule. Next execution: Fri Oct 26 20:51:06 MSK 2012.Delay is: 1minutes
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@18346a3: startup date [Fri Oct 26 20:49:33 MSK 2012]; root of context hierarchy
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [ru/retbansk/mail/scheduledConfig.xml]
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@b8a28b: defining beans [email,scheduleChanger,sheduledProcess,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAsyncAnnotationProcessor,org.springframework.context.annotation.internalScheduledAnnotationProcessor,scheduler,dynamicSchedule,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (PropertiesLoaderSupport.java:177) - Loading properties file from class path resource [email.properties]
+ INFO [main] (ExecutorConfigurationSupport.java:115) - Initializing ExecutorService  'scheduler'
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1888da5: startup date [Fri Oct 26 20:49:34 MSK 2012]; root of context hierarchy
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [applicationContext.xml]
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@e08014: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (Jaxb2Marshaller.java:436) - Creating JAXBContext with classes to be bound [class ru.retbansk.mail.domain.DayReport,class ru.retbansk.mail.domain.TaskReport]
+ INFO [main] (DynamicSchedule.java:38) - End of schedule. Next execution: Fri Oct 26 20:49:34 MSK 2012.Delay is: 0.05minutes
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:38) - End of schedule. Next execution: Fri Oct 26 20:49:37 MSK 2012.Delay is: 0.05minutes
+ INFO [scheduler-1] (DynamicSchedule.java:23) - New delay is: 1.6666666 minutes
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:38) - End of schedule. Next execution: Fri Oct 26 20:51:17 MSK 2012.Delay is: 1.6666666minutes
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1b9d4d8: startup date [Fri Oct 26 21:01:43 MSK 2012]; root of context hierarchy
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [ru/retbansk/mail/scheduledConfig.xml]
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@e03500: defining beans [email,scheduleChanger,sheduledProcess,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAsyncAnnotationProcessor,org.springframework.context.annotation.internalScheduledAnnotationProcessor,scheduler,dynamicSchedule,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (PropertiesLoaderSupport.java:177) - Loading properties file from class path resource [email.properties]
+ INFO [main] (ExecutorConfigurationSupport.java:115) - Initializing ExecutorService  'scheduler'
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@fe676b: startup date [Fri Oct 26 21:01:44 MSK 2012]; root of context hierarchy
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [applicationContext.xml]
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1a7ffb3: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (Jaxb2Marshaller.java:436) - Creating JAXBContext with classes to be bound [class ru.retbansk.mail.domain.DayReport,class ru.retbansk.mail.domain.TaskReport]
+ INFO [main] (DefaultSingletonBeanRegistry.java:433) - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@e03500: defining beans [email,scheduleChanger,sheduledProcess,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAsyncAnnotationProcessor,org.springframework.context.annotation.internalScheduledAnnotationProcessor,scheduler,dynamicSchedule,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (ExecutorConfigurationSupport.java:150) - Shutting down ExecutorService 'scheduler'
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@18346a3: startup date [Fri Oct 26 21:04:20 MSK 2012]; root of context hierarchy
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [ru/retbansk/mail/scheduledConfig.xml]
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@b8a28b: defining beans [email,scheduleChanger,sheduledProcess,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAsyncAnnotationProcessor,org.springframework.context.annotation.internalScheduledAnnotationProcessor,scheduler,dynamicSchedule,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (PropertiesLoaderSupport.java:177) - Loading properties file from class path resource [email.properties]
+ INFO [main] (ExecutorConfigurationSupport.java:115) - Initializing ExecutorService  'scheduler'
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@359b24: startup date [Fri Oct 26 21:04:21 MSK 2012]; root of context hierarchy
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [applicationContext.xml]
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@f617ce: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (Jaxb2Marshaller.java:436) - Creating JAXBContext with classes to be bound [class ru.retbansk.mail.domain.DayReport,class ru.retbansk.mail.domain.TaskReport]
+ INFO [main] (DynamicSchedule.java:57) - End of schedule. Next execution: Fri Oct 26 21:04:21 MSK 2012. Delay is: 00:00:03
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:57) - End of schedule. Next execution: Fri Oct 26 21:04:24 MSK 2012. Delay is: 00:00:03
+ INFO [scheduler-1] (DynamicSchedule.java:42) - New delay is: 1.6666666 minutes
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:57) - End of schedule. Next execution: Fri Oct 26 21:06:04 MSK 2012. Delay is: 00:01:40
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1b9d4d8: startup date [Fri Oct 26 21:05:13 MSK 2012]; root of context hierarchy
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [ru/retbansk/mail/scheduledConfig.xml]
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@e03500: defining beans [email,scheduleChanger,sheduledProcess,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAsyncAnnotationProcessor,org.springframework.context.annotation.internalScheduledAnnotationProcessor,scheduler,dynamicSchedule,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (PropertiesLoaderSupport.java:177) - Loading properties file from class path resource [email.properties]
+ INFO [main] (ExecutorConfigurationSupport.java:115) - Initializing ExecutorService  'scheduler'
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@15c9416: startup date [Fri Oct 26 21:05:14 MSK 2012]; root of context hierarchy
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [applicationContext.xml]
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@94fde1: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (Jaxb2Marshaller.java:436) - Creating JAXBContext with classes to be bound [class ru.retbansk.mail.domain.DayReport,class ru.retbansk.mail.domain.TaskReport]
+ INFO [main] (DynamicSchedule.java:57) - End of schedule. Next execution: Fri Oct 26 21:05:14 MSK 2012. Delay is: 00:00:03
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:57) - End of schedule. Next execution: Fri Oct 26 21:05:17 MSK 2012. Delay is: 00:00:03
+ INFO [scheduler-1] (DynamicSchedule.java:42) - New delay is: 00:01:40
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:57) - End of schedule. Next execution: Fri Oct 26 21:06:57 MSK 2012. Delay is: 00:01:40
+ INFO [scheduler-1] (DynamicSchedule.java:42) - New delay is: 00:00:10
+ INFO [scheduler-1] (DynamicSchedule.java:57) - End of schedule. Next execution: Fri Oct 26 21:06:18 MSK 2012. Delay is: 00:00:10
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:57) - End of schedule. Next execution: Fri Oct 26 21:06:28 MSK 2012. Delay is: 00:00:10
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:57) - End of schedule. Next execution: Fri Oct 26 21:06:38 MSK 2012. Delay is: 00:00:10
+ INFO [scheduler-1] (DynamicSchedule.java:42) - New delay is: 00:16:40
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:57) - End of schedule. Next execution: Fri Oct 26 21:23:18 MSK 2012. Delay is: 00:16:40
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:57) - End of schedule. Next execution: Fri Oct 26 21:23:37 MSK 2012. Delay is: 00:16:40
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@19299f5: startup date [Fri Oct 26 21:37:04 MSK 2012]; root of context hierarchy
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [ru/retbansk/mail/scheduledConfig.xml]
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1b78a69: defining beans [email,scheduleChanger,sheduledProcess,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAsyncAnnotationProcessor,org.springframework.context.annotation.internalScheduledAnnotationProcessor,scheduler,dynamicSchedule,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (PropertiesLoaderSupport.java:177) - Loading properties file from class path resource [email.properties]
+ INFO [main] (ExecutorConfigurationSupport.java:115) - Initializing ExecutorService  'scheduler'
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@15c9416: startup date [Fri Oct 26 21:37:04 MSK 2012]; root of context hierarchy
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [applicationContext.xml]
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@94fde1: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (Jaxb2Marshaller.java:436) - Creating JAXBContext with classes to be bound [class ru.retbansk.mail.domain.DayReport,class ru.retbansk.mail.domain.TaskReport]
+ INFO [main] (DynamicSchedule.java:61) - End of schedule. Next execution: Fri Oct 26 21:37:04 MSK 2012. Delay is: 00:00:03
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:61) - End of schedule. Next execution: Fri Oct 26 21:37:07 MSK 2012. Delay is: 00:00:03
+ INFO [scheduler-1] (DynamicSchedule.java:43) - New delay is: 00:00:20
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:61) - End of schedule. Next execution: Fri Oct 26 21:37:27 MSK 2012. Delay is: 00:00:20
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:61) - End of schedule. Next execution: Fri Oct 26 21:37:47 MSK 2012. Delay is: 00:00:20
+ INFO [scheduler-1] (DynamicSchedule.java:43) - New delay is: 00:00:15
+ INFO [scheduler-1] (DynamicSchedule.java:61) - End of schedule. Next execution: Fri Oct 26 21:37:32 MSK 2012. Delay is: 00:00:15
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:61) - End of schedule. Next execution: Fri Oct 26 21:37:47 MSK 2012. Delay is: 00:00:15
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:61) - End of schedule. Next execution: Fri Oct 26 21:38:02 MSK 2012. Delay is: 00:00:15
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:61) - End of schedule. Next execution: Fri Oct 26 21:38:17 MSK 2012. Delay is: 00:00:15
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:61) - End of schedule. Next execution: Fri Oct 26 21:38:32 MSK 2012. Delay is: 00:00:15
+ INFO [scheduler-1] (DynamicSchedule.java:43) - New delay is: 00:00:14
+ INFO [scheduler-1] (DynamicSchedule.java:61) - End of schedule. Next execution: Fri Oct 26 21:38:24 MSK 2012. Delay is: 00:00:14
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:61) - End of schedule. Next execution: Fri Oct 26 21:38:39 MSK 2012. Delay is: 00:00:14
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:61) - End of schedule. Next execution: Fri Oct 26 21:38:54 MSK 2012. Delay is: 00:00:14
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:61) - End of schedule. Next execution: Fri Oct 26 21:39:09 MSK 2012. Delay is: 00:00:14
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:61) - End of schedule. Next execution: Fri Oct 26 21:39:24 MSK 2012. Delay is: 00:00:14
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:61) - End of schedule. Next execution: Fri Oct 26 21:39:39 MSK 2012. Delay is: 00:00:14
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:96) - Program was stopped by the User
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@b6a6d6: startup date [Fri Oct 26 21:40:12 MSK 2012]; root of context hierarchy
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [ru/retbansk/mail/scheduledConfig.xml]
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1b78a69: defining beans [email,scheduleChanger,sheduledProcess,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAsyncAnnotationProcessor,org.springframework.context.annotation.internalScheduledAnnotationProcessor,scheduler,dynamicSchedule,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (PropertiesLoaderSupport.java:177) - Loading properties file from class path resource [email.properties]
+ INFO [main] (ExecutorConfigurationSupport.java:115) - Initializing ExecutorService  'scheduler'
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@15c9416: startup date [Fri Oct 26 21:40:13 MSK 2012]; root of context hierarchy
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [applicationContext.xml]
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@94fde1: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (Jaxb2Marshaller.java:436) - Creating JAXBContext with classes to be bound [class ru.retbansk.mail.domain.DayReport,class ru.retbansk.mail.domain.TaskReport]
+ INFO [main] (DynamicSchedule.java:61) - End of schedule. Next execution: Fri Oct 26 21:40:13 MSK 2012. Delay is: 00:00:03
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:61) - End of schedule. Next execution: Fri Oct 26 21:40:16 MSK 2012. Delay is: 00:00:03
+ INFO [scheduler-1] (DynamicSchedule.java:43) - New delay is: 00:05:00
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:61) - End of schedule. Next execution: Fri Oct 26 21:45:16 MSK 2012. Delay is: 00:05:00
+ INFO [scheduler-1] (DynamicSchedule.java:43) - New delay is: 00:03:20
+ INFO [scheduler-1] (DynamicSchedule.java:61) - End of schedule. Next execution: Fri Oct 26 21:41:17 MSK 2012. Delay is: 00:03:20
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:61) - End of schedule. Next execution: Fri Oct 26 21:44:37 MSK 2012. Delay is: 00:03:20
+ INFO [scheduler-1] (SheduledProcess.java:56) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:61) - End of schedule. Next execution: Fri Oct 26 21:47:57 MSK 2012. Delay is: 00:03:20
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1b9d4d8: startup date [Fri Oct 26 22:21:51 MSK 2012]; root of context hierarchy
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [ru/retbansk/mail/scheduledConfig.xml]
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1b78a69: defining beans [email,scheduleChanger,sheduledProcess,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAsyncAnnotationProcessor,org.springframework.context.annotation.internalScheduledAnnotationProcessor,scheduler,dynamicSchedule,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (PropertiesLoaderSupport.java:177) - Loading properties file from class path resource [email.properties]
+ INFO [main] (ExecutorConfigurationSupport.java:115) - Initializing ExecutorService  'scheduler'
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@15c9416: startup date [Fri Oct 26 22:21:51 MSK 2012]; root of context hierarchy
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [applicationContext.xml]
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@94fde1: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (Jaxb2Marshaller.java:436) - Creating JAXBContext with classes to be bound [class ru.retbansk.mail.domain.DayReport,class ru.retbansk.mail.domain.TaskReport]
+ INFO [main] (DynamicSchedule.java:61) - End of schedule. Next execution: Fri Oct 26 22:21:52 MSK 2012. Delay is: 00:01:00
+ INFO [scheduler-1] (SheduledProcess.java:47) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:61) - End of schedule. Next execution: Fri Oct 26 22:22:52 MSK 2012. Delay is: 00:01:00
+ INFO [scheduler-1] (SheduledProcess.java:47) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:61) - End of schedule. Next execution: Fri Oct 26 22:23:52 MSK 2012. Delay is: 00:01:00
+ INFO [scheduler-1] (SheduledProcess.java:47) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:61) - End of schedule. Next execution: Fri Oct 26 22:24:52 MSK 2012. Delay is: 00:01:00
+ INFO [scheduler-1] (SheduledProcess.java:47) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:61) - End of schedule. Next execution: Fri Oct 26 22:25:52 MSK 2012. Delay is: 00:01:00
+ INFO [scheduler-1] (SheduledProcess.java:47) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports1/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports1/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports1/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:61) - End of schedule. Next execution: Fri Oct 26 22:26:52 MSK 2012. Delay is: 00:01:00
+ INFO [scheduler-1] (SheduledProcess.java:47) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:61) - End of schedule. Next execution: Fri Oct 26 22:27:52 MSK 2012. Delay is: 00:01:00
+ INFO [scheduler-1] (SheduledProcess.java:47) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:61) - End of schedule. Next execution: Fri Oct 26 22:28:52 MSK 2012. Delay is: 00:01:00
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@151f910: startup date [Fri Oct 26 22:29:53 MSK 2012]; root of context hierarchy
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [ru/retbansk/mail/scheduledConfig.xml]
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1b78a69: defining beans [email,scheduleChanger,sheduledProcess,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAsyncAnnotationProcessor,org.springframework.context.annotation.internalScheduledAnnotationProcessor,scheduler,dynamicSchedule,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (PropertiesLoaderSupport.java:177) - Loading properties file from class path resource [email.properties]
+ INFO [main] (ExecutorConfigurationSupport.java:115) - Initializing ExecutorService  'scheduler'
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@15c9416: startup date [Fri Oct 26 22:29:54 MSK 2012]; root of context hierarchy
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [applicationContext.xml]
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@94fde1: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (Jaxb2Marshaller.java:436) - Creating JAXBContext with classes to be bound [class ru.retbansk.mail.domain.DayReport,class ru.retbansk.mail.domain.TaskReport]
+ INFO [main] (DynamicSchedule.java:61) - End of schedule. Next execution: Fri Oct 26 22:29:54 MSK 2012. Delay is: 00:01:00
+ INFO [scheduler-1] (SheduledProcess.java:47) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:221) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:61) - End of schedule. Next execution: Fri Oct 26 22:30:54 MSK 2012. Delay is: 00:01:00
+ERROR [main] (ReplyManagerSimpleImpl.java:26) - Mail server connection failed; nested exception is javax.mail.MessagingException: Could not connect to SMTP host: localhost, port: 25;
+  nested exception is:
+	java.net.SocketException: Network is unreachable: connect. Failed messages: javax.mail.MessagingException: Could not connect to SMTP host: localhost, port: 25;
+  nested exception is:
+	java.net.SocketException: Network is unreachable: connect
+ERROR [main] (ReplyManagerSimpleImpl.java:31) - Mail server connection failed; nested exception is javax.mail.MessagingException: Could not connect to SMTP host: pop.yandex.ru, port: 25;
+  nested exception is:
+	java.net.SocketException: Network is unreachable: connect. Failed messages: javax.mail.MessagingException: Could not connect to SMTP host: pop.yandex.ru, port: 25;
+  nested exception is:
+	java.net.SocketException: Network is unreachable: connect
+ERROR [main] (ReplyManagerSimpleImpl.java:32) - Mail server connection failed; nested exception is javax.mail.MessagingException: Could not connect to SMTP host: pop.yandex.ru, port: 110, response: -1. Failed messages: javax.mail.MessagingException: Could not connect to SMTP host: pop.yandex.ru, port: 110, response: -1
+ERROR [main] (ReplyManagerSimpleImpl.java:31) - Mail server connection failed; nested exception is javax.mail.MessagingException: Could not connect to SMTP host: localhost, port: 25;
+  nested exception is:
+	java.net.SocketException: Network is unreachable: connect. Failed messages: javax.mail.MessagingException: Could not connect to SMTP host: localhost, port: 25;
+  nested exception is:
+	java.net.SocketException: Network is unreachable: connect
+ERROR [main] (ReplyManagerSimpleImpl.java:32) - Mail server connection failed; nested exception is javax.mail.MessagingException: Could not connect to SMTP host: localhost, port: 587;
+  nested exception is:
+	java.net.ConnectException: Connection refused: connect. Failed messages: javax.mail.MessagingException: Could not connect to SMTP host: localhost, port: 587;
+  nested exception is:
+	java.net.ConnectException: Connection refused: connect
+ERROR [main] (ReplyManagerSimpleImpl.java:33) - Mail server connection failed; nested exception is javax.mail.MessagingException: Could not connect to SMTP host: localhost, port: 587;
+  nested exception is:
+	java.net.ConnectException: Connection refused: connect. Failed messages: javax.mail.MessagingException: Could not connect to SMTP host: localhost, port: 587;
+  nested exception is:
+	java.net.ConnectException: Connection refused: connect
+ERROR [main] (ReplyManagerSimpleImpl.java:33) - Mail server connection failed; nested exception is javax.mail.MessagingException: Could not connect to SMTP host: localhost, port: 587;
+  nested exception is:
+	java.net.ConnectException: Connection refused: connect. Failed messages: javax.mail.MessagingException: Could not connect to SMTP host: localhost, port: 587;
+  nested exception is:
+	java.net.ConnectException: Connection refused: connect
+ERROR [main] (ReplyManagerSimpleImpl.java:34) - Mail server connection failed; nested exception is javax.mail.MessagingException: Could not connect to SMTP host: localhost, port: 465;
+  nested exception is:
+	java.net.SocketException: Network is unreachable: connect. Failed messages: javax.mail.MessagingException: Could not connect to SMTP host: localhost, port: 465;
+  nested exception is:
+	java.net.SocketException: Network is unreachable: connect
+ERROR [main] (ReplyManagerSimpleImpl.java:34) - Could not parse mail; nested exception is javax.mail.internet.AddressException: Local address contains control or whitespace in string ``ляля''
+ERROR [main] (ReplyManagerSimpleImpl.java:40) - Mail server connection failed; nested exception is javax.mail.NoSuchProviderException: No provider for SSL. Failed messages: javax.mail.NoSuchProviderException: No provider for SSL
+ERROR [main] (ReplyManagerSimpleImpl.java:40) - Could not parse mail; nested exception is javax.mail.internet.AddressException: Local address contains control or whitespace in string ``ляля''
+ INFO [main] (TestContextManager.java:185) - @TestExecutionListeners is not present for class [class ru.retbansk.utils.marshaller.Jaxb2MarshallerTest]: using defaults.
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [applicationContext.xml]
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.GenericApplicationContext@b55c7f: startup date [Sat Oct 27 15:00:15 MSK 2012]; root of context hierarchy
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5b6e3a: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (Jaxb2Marshaller.java:436) - Creating JAXBContext with classes to be bound [class ru.retbansk.mail.domain.DayReport,class ru.retbansk.mail.domain.TaskReport]
+ INFO [Thread-1] (AbstractApplicationContext.java:1025) - Closing org.springframework.context.support.GenericApplicationContext@b55c7f: startup date [Sat Oct 27 15:00:15 MSK 2012]; root of context hierarchy
+ INFO [Thread-1] (DefaultSingletonBeanRegistry.java:433) - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5b6e3a: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (TestContextManager.java:185) - @TestExecutionListeners is not present for class [class ru.retbansk.utils.marshaller.Jaxb2MarshallerTest]: using defaults.
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [applicationContext.xml]
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.GenericApplicationContext@b55c7f: startup date [Sat Oct 27 15:03:11 MSK 2012]; root of context hierarchy
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5b6e3a: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (Jaxb2Marshaller.java:436) - Creating JAXBContext with classes to be bound [class ru.retbansk.mail.domain.DayReport,class ru.retbansk.mail.domain.TaskReport]
+ INFO [Thread-1] (AbstractApplicationContext.java:1025) - Closing org.springframework.context.support.GenericApplicationContext@b55c7f: startup date [Sat Oct 27 15:03:11 MSK 2012]; root of context hierarchy
+ INFO [Thread-1] (DefaultSingletonBeanRegistry.java:433) - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5b6e3a: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (TestContextManager.java:185) - @TestExecutionListeners is not present for class [class ru.retbansk.utils.marshaller.Jaxb2MarshallerTest]: using defaults.
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [applicationContext.xml]
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.GenericApplicationContext@1637d45: startup date [Sat Oct 27 15:03:45 MSK 2012]; root of context hierarchy
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5b6e3a: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (Jaxb2Marshaller.java:436) - Creating JAXBContext with classes to be bound [class ru.retbansk.mail.domain.DayReport,class ru.retbansk.mail.domain.TaskReport]
+ INFO [Thread-1] (AbstractApplicationContext.java:1025) - Closing org.springframework.context.support.GenericApplicationContext@1637d45: startup date [Sat Oct 27 15:03:45 MSK 2012]; root of context hierarchy
+ INFO [Thread-1] (DefaultSingletonBeanRegistry.java:433) - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5b6e3a: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (TestContextManager.java:185) - @TestExecutionListeners is not present for class [class ru.retbansk.utils.marshaller.Jaxb2MarshallerTest]: using defaults.
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [applicationContext.xml]
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.GenericApplicationContext@b55c7f: startup date [Sat Oct 27 15:05:10 MSK 2012]; root of context hierarchy
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5b6e3a: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (Jaxb2Marshaller.java:436) - Creating JAXBContext with classes to be bound [class ru.retbansk.mail.domain.DayReport,class ru.retbansk.mail.domain.TaskReport]
+ INFO [Thread-1] (AbstractApplicationContext.java:1025) - Closing org.springframework.context.support.GenericApplicationContext@b55c7f: startup date [Sat Oct 27 15:05:10 MSK 2012]; root of context hierarchy
+ INFO [Thread-1] (DefaultSingletonBeanRegistry.java:433) - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5b6e3a: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (TestContextManager.java:185) - @TestExecutionListeners is not present for class [class ru.retbansk.utils.marshaller.Jaxb2MarshallerTest]: using defaults.
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [applicationContext.xml]
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.GenericApplicationContext@b55c7f: startup date [Sat Oct 27 15:09:11 MSK 2012]; root of context hierarchy
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5b6e3a: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (Jaxb2Marshaller.java:436) - Creating JAXBContext with classes to be bound [class ru.retbansk.mail.domain.DayReport,class ru.retbansk.mail.domain.TaskReport]
+ INFO [Thread-1] (AbstractApplicationContext.java:1025) - Closing org.springframework.context.support.GenericApplicationContext@b55c7f: startup date [Sat Oct 27 15:09:11 MSK 2012]; root of context hierarchy
+ INFO [Thread-1] (DefaultSingletonBeanRegistry.java:433) - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5b6e3a: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (TestContextManager.java:185) - @TestExecutionListeners is not present for class [class ru.retbansk.utils.marshaller.Jaxb2MarshallerTest]: using defaults.
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [applicationContext.xml]
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.GenericApplicationContext@b55c7f: startup date [Sat Oct 27 15:09:50 MSK 2012]; root of context hierarchy
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@eb9464: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (Jaxb2Marshaller.java:436) - Creating JAXBContext with classes to be bound [class ru.retbansk.mail.domain.DayReport,class ru.retbansk.mail.domain.TaskReport]
+ INFO [Thread-1] (AbstractApplicationContext.java:1025) - Closing org.springframework.context.support.GenericApplicationContext@b55c7f: startup date [Sat Oct 27 15:09:50 MSK 2012]; root of context hierarchy
+ INFO [Thread-1] (DefaultSingletonBeanRegistry.java:433) - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@eb9464: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (TestContextManager.java:185) - @TestExecutionListeners is not present for class [class ru.retbansk.utils.marshaller.Jaxb2MarshallerTest]: using defaults.
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [applicationContext.xml]
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.GenericApplicationContext@22b29a: startup date [Sat Oct 27 15:16:32 MSK 2012]; root of context hierarchy
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@bb4d74: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (Jaxb2Marshaller.java:436) - Creating JAXBContext with classes to be bound [class ru.retbansk.mail.domain.DayReport,class ru.retbansk.mail.domain.TaskReport]
+ INFO [Thread-1] (AbstractApplicationContext.java:1025) - Closing org.springframework.context.support.GenericApplicationContext@22b29a: startup date [Sat Oct 27 15:16:32 MSK 2012]; root of context hierarchy
+ INFO [Thread-1] (DefaultSingletonBeanRegistry.java:433) - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@bb4d74: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (TestContextManager.java:185) - @TestExecutionListeners is not present for class [class ru.retbansk.utils.marshaller.Jaxb2MarshallerTest]: using defaults.
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [applicationContext.xml]
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.GenericApplicationContext@22b29a: startup date [Sat Oct 27 15:18:06 MSK 2012]; root of context hierarchy
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@d9fc12: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (Jaxb2Marshaller.java:436) - Creating JAXBContext with classes to be bound [class ru.retbansk.mail.domain.DayReport,class ru.retbansk.mail.domain.TaskReport]
+ INFO [Thread-1] (AbstractApplicationContext.java:1025) - Closing org.springframework.context.support.GenericApplicationContext@22b29a: startup date [Sat Oct 27 15:18:06 MSK 2012]; root of context hierarchy
+ INFO [Thread-1] (DefaultSingletonBeanRegistry.java:433) - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@d9fc12: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (TestContextManager.java:185) - @TestExecutionListeners is not present for class [class ru.retbansk.utils.marshaller.Jaxb2MarshallerTest]: using defaults.
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [applicationContext.xml]
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.GenericApplicationContext@22b29a: startup date [Sat Oct 27 15:20:14 MSK 2012]; root of context hierarchy
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@d9fc12: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (Jaxb2Marshaller.java:436) - Creating JAXBContext with classes to be bound [class ru.retbansk.mail.domain.DayReport,class ru.retbansk.mail.domain.TaskReport]
+ INFO [Thread-1] (AbstractApplicationContext.java:1025) - Closing org.springframework.context.support.GenericApplicationContext@22b29a: startup date [Sat Oct 27 15:20:14 MSK 2012]; root of context hierarchy
+ INFO [Thread-1] (DefaultSingletonBeanRegistry.java:433) - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@d9fc12: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (TestContextManager.java:185) - @TestExecutionListeners is not present for class [class ru.retbansk.utils.marshaller.Jaxb2MarshallerTest]: using defaults.
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [applicationContext.xml]
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.GenericApplicationContext@22b29a: startup date [Sat Oct 27 15:20:25 MSK 2012]; root of context hierarchy
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@bb4d74: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (Jaxb2Marshaller.java:436) - Creating JAXBContext with classes to be bound [class ru.retbansk.mail.domain.DayReport,class ru.retbansk.mail.domain.TaskReport]
+ INFO [Thread-1] (AbstractApplicationContext.java:1025) - Closing org.springframework.context.support.GenericApplicationContext@22b29a: startup date [Sat Oct 27 15:20:25 MSK 2012]; root of context hierarchy
+ INFO [Thread-1] (DefaultSingletonBeanRegistry.java:433) - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@bb4d74: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (TestContextManager.java:185) - @TestExecutionListeners is not present for class [class ru.retbansk.utils.marshaller.Jaxb2MarshallerTest]: using defaults.
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [applicationContext.xml]
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.GenericApplicationContext@1fba2af: startup date [Sat Oct 27 15:20:48 MSK 2012]; root of context hierarchy
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@d9fc12: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (Jaxb2Marshaller.java:436) - Creating JAXBContext with classes to be bound [class ru.retbansk.mail.domain.DayReport,class ru.retbansk.mail.domain.TaskReport]
+ INFO [Thread-1] (AbstractApplicationContext.java:1025) - Closing org.springframework.context.support.GenericApplicationContext@1fba2af: startup date [Sat Oct 27 15:20:48 MSK 2012]; root of context hierarchy
+ INFO [Thread-1] (DefaultSingletonBeanRegistry.java:433) - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@d9fc12: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (TestContextManager.java:185) - @TestExecutionListeners is not present for class [class ru.retbansk.utils.marshaller.Jaxb2MarshallerTest]: using defaults.
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [applicationContext.xml]
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.GenericApplicationContext@22b29a: startup date [Sat Oct 27 15:20:57 MSK 2012]; root of context hierarchy
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1342e4a: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (Jaxb2Marshaller.java:436) - Creating JAXBContext with classes to be bound [class ru.retbansk.mail.domain.DayReport,class ru.retbansk.mail.domain.TaskReport]
+ INFO [Thread-1] (AbstractApplicationContext.java:1025) - Closing org.springframework.context.support.GenericApplicationContext@22b29a: startup date [Sat Oct 27 15:20:57 MSK 2012]; root of context hierarchy
+ INFO [Thread-1] (DefaultSingletonBeanRegistry.java:433) - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1342e4a: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (TestContextManager.java:185) - @TestExecutionListeners is not present for class [class ru.retbansk.utils.marshaller.Jaxb2MarshallerTest]: using defaults.
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [applicationContext.xml]
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.GenericApplicationContext@22b29a: startup date [Sat Oct 27 15:21:09 MSK 2012]; root of context hierarchy
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@d9fc12: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (Jaxb2Marshaller.java:436) - Creating JAXBContext with classes to be bound [class ru.retbansk.mail.domain.DayReport,class ru.retbansk.mail.domain.TaskReport]
+ INFO [Thread-1] (AbstractApplicationContext.java:1025) - Closing org.springframework.context.support.GenericApplicationContext@22b29a: startup date [Sat Oct 27 15:21:09 MSK 2012]; root of context hierarchy
+ INFO [Thread-1] (DefaultSingletonBeanRegistry.java:433) - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@d9fc12: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (TestContextManager.java:185) - @TestExecutionListeners is not present for class [class ru.retbansk.utils.marshaller.Jaxb2MarshallerTest]: using defaults.
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [applicationContext.xml]
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.GenericApplicationContext@22b29a: startup date [Sat Oct 27 15:21:16 MSK 2012]; root of context hierarchy
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@d9fc12: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (Jaxb2Marshaller.java:436) - Creating JAXBContext with classes to be bound [class ru.retbansk.mail.domain.DayReport,class ru.retbansk.mail.domain.TaskReport]
+ INFO [Thread-1] (AbstractApplicationContext.java:1025) - Closing org.springframework.context.support.GenericApplicationContext@22b29a: startup date [Sat Oct 27 15:21:16 MSK 2012]; root of context hierarchy
+ INFO [Thread-1] (DefaultSingletonBeanRegistry.java:433) - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@d9fc12: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (TestContextManager.java:185) - @TestExecutionListeners is not present for class [class ru.retbansk.utils.marshaller.Jaxb2MarshallerTest]: using defaults.
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [applicationContext.xml]
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.GenericApplicationContext@1fba2af: startup date [Sat Oct 27 15:28:03 MSK 2012]; root of context hierarchy
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1342e4a: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (Jaxb2Marshaller.java:436) - Creating JAXBContext with classes to be bound [class ru.retbansk.mail.domain.DayReport,class ru.retbansk.mail.domain.TaskReport]
+ INFO [Thread-1] (AbstractApplicationContext.java:1025) - Closing org.springframework.context.support.GenericApplicationContext@1fba2af: startup date [Sat Oct 27 15:28:03 MSK 2012]; root of context hierarchy
+ INFO [Thread-1] (DefaultSingletonBeanRegistry.java:433) - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1342e4a: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1b9d4d8: startup date [Sat Oct 27 15:48:28 MSK 2012]; root of context hierarchy
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [ru/retbansk/mail/scheduledConfig.xml]
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1b78a69: defining beans [email,scheduleChanger,sheduledProcess,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAsyncAnnotationProcessor,org.springframework.context.annotation.internalScheduledAnnotationProcessor,scheduler,dynamicSchedule,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (PropertiesLoaderSupport.java:177) - Loading properties file from class path resource [email.properties]
+ INFO [main] (ExecutorConfigurationSupport.java:115) - Initializing ExecutorService  'scheduler'
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@167c097: startup date [Sat Oct 27 15:48:29 MSK 2012]; root of context hierarchy
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [applicationContext.xml]
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@3eab9: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (Jaxb2Marshaller.java:436) - Creating JAXBContext with classes to be bound [class ru.retbansk.mail.domain.DayReport,class ru.retbansk.mail.domain.TaskReport]
+ INFO [main] (DynamicSchedule.java:61) - End of schedule. Next execution: Sat Oct 27 15:48:29 MSK 2012. Delay is: 00:01:00
+ INFO [scheduler-1] (SheduledProcess.java:47) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:227) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:227) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:227) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:61) - End of schedule. Next execution: Sat Oct 27 15:49:29 MSK 2012. Delay is: 00:01:00
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1b9d4d8: startup date [Sat Oct 27 15:51:34 MSK 2012]; root of context hierarchy
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [ru/retbansk/mail/scheduledConfig.xml]
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@e03500: defining beans [email,scheduleChanger,sheduledProcess,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAsyncAnnotationProcessor,org.springframework.context.annotation.internalScheduledAnnotationProcessor,scheduler,dynamicSchedule,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (PropertiesLoaderSupport.java:177) - Loading properties file from class path resource [email.properties]
+ INFO [main] (ExecutorConfigurationSupport.java:115) - Initializing ExecutorService  'scheduler'
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@167c097: startup date [Sat Oct 27 15:51:35 MSK 2012]; root of context hierarchy
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [applicationContext.xml]
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@3eab9: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (Jaxb2Marshaller.java:436) - Creating JAXBContext with classes to be bound [class ru.retbansk.mail.domain.DayReport,class ru.retbansk.mail.domain.TaskReport]
+ INFO [main] (DynamicSchedule.java:61) - End of schedule. Next execution: Sat Oct 27 15:51:35 MSK 2012. Delay is: 00:01:00
+ INFO [scheduler-1] (SheduledProcess.java:47) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:227) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:227) - Report created - ./XmlReports/kirill.iliashovitch@yandex.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:227) - Report created - ./XmlReports/tr-legres@rambler.ru/report.from.24.10.12.xml
+ INFO [scheduler-1] (DynamicSchedule.java:61) - End of schedule. Next execution: Sat Oct 27 15:52:35 MSK 2012. Delay is: 00:01:00

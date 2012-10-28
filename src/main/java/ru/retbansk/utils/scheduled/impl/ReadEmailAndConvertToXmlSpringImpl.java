@@ -106,7 +106,14 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 		}
 		return prop;
 	}
-
+	/**
+	 * Method execute actually does the entire job:
+	 * loads email properties, reads email, converts valid ones into xml files and send confirmation emails.
+	 * @see #readEmail()
+	 * @see #convertToXml(HashSet)
+	 * @see ru.retbansk.utils.scheduled.ReplyManager
+	 * 
+	 */
 	@Override
 	public void execute() throws Exception {
 		convertToXml(readEmail());
@@ -119,7 +126,16 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 		replyList.clear();
 
 	}
-
+	/**
+	 * Loads email properties, reads email messages, 
+	 * converts their multipart bodies into string,
+	 * send error emails if message doesn't contain valid report and at last returns a reversed Set of the Valid Reports
+	 * <p><b> deletes messages
+	 * @see #readEmail()
+	 * @see #convertToXml(HashSet)
+	 * @see ru.retbansk.utils.scheduled.ReplyManager
+	 * @return HashSet<DayReport> of the Valid Day Reports
+	 */
 	@Override
 	public HashSet<DayReport> readEmail() throws Exception {
 
@@ -226,7 +242,12 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 		
 		return dayReportSet;
 	}
-
+	/**
+	 * Converts a Set of the Valid Reports into xml and write into the files. 1 file per 1 DayReport
+	 * <p> Overwrites files with the same date from the same person
+	 * @param dayReportSet HashSet with the valid Day Reports only
+	 * @throws Exception
+	 */
 	@Override
 	public void convertToXml(HashSet<DayReport> dayReportSet) throws Exception {
 		Properties prop = loadProperties();
@@ -259,7 +280,15 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 			
 		}
 	}
-	
+	/**
+	 * Validation method. Patterns used:
+	 * <p>.+,.+,[\\d|\\s]{1,3}  
+	 * <p>.+[.].+[.][\\d|\\s]{1,3} 
+	 * <p>.+[/].+[/][\\d|\\s]{1,3}
+	 * @param body String released from email message body
+	 * @param reportDate Date from email message. All sub-reports will have the same Date as DayReport
+	 * @return Returns a List of valid sub-reports  
+	 */
 	public List<TaskReport> giveValidReports(String body, Date reportDate) {
 		List<TaskReport> reportList = new ArrayList<TaskReport>();
 		TaskReport report;

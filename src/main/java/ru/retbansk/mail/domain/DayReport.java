@@ -25,9 +25,11 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  * Main domain class. 
- *  *
+ * <p> implements <code> Comparable </code> so it can be sorted
+ * <p> <code>hashcode</code> and <code>equals</code> are overridden
  * @author Siarhei Yanusheuski
  * @since 25.10.2012
+ * 
  */
 @XmlRootElement(name="DayReport")
 public class DayReport implements Comparable<DayReport> {

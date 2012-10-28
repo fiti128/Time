@@ -20,7 +20,7 @@ import java.util.Date;
 
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 /**
- * 
+ * Simple adapter to make Date look like <b>dd-MM-yyyy</b> in xml
  * @author Siarhei Yanusheuski
  * @since 25.10.2012
  */

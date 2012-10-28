@@ -15,7 +15,7 @@
  */
 package ru.retbansk.mail.domain;
 /**
- * Class helper.Is using to support sending confirmation replies class.
+ * Class helper.It is used to support sending confirmation replies class.
  * <p> Nothing special at all. In future will rewrite or will use another class
  * 
  * @author Siarhei Yanusheuski

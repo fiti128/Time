@@ -86,6 +86,7 @@ public class ReplyManagerSimpleImpl implements ReplyManager {
 	 * 
 	 * @see org.springframework.mail.SimpleMailMessage
 	 * @see org.springframework.mail.javamail.JavaMailSenderImpl
+	 * @param dayReport I used DayReport as a parameter to know whom to send
 	 */
 	public void sendError(DayReport dayReport) {
 		SimpleMailMessage msg = new SimpleMailMessage();

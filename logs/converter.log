@@ -4470,3 +4470,18 @@ ERROR [scheduler-1] (ReplyManagerSimpleImpl.java:49) - Failed messages: com.sun.
  INFO [scheduler-1] (SheduledProcess.java:47) - Start schedule. Reading Email...
  INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:108) - No reports detected
  INFO [scheduler-1] (DynamicSchedule.java:80) - End of schedule. Next execution: Sun Oct 28 18:09:41 MSK 2012. Delay is: 00:01:00
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@b6a6d6: startup date [Sun Oct 28 22:08:39 MSK 2012]; root of context hierarchy
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [ru/retbansk/mail/scheduledConfig.xml]
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1639615: defining beans [scheduleChanger,sheduledProcess,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAsyncAnnotationProcessor,org.springframework.context.annotation.internalScheduledAnnotationProcessor,scheduler,dynamicSchedule,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (ExecutorConfigurationSupport.java:115) - Initializing ExecutorService  'scheduler'
+ INFO [main] (AbstractApplicationContext.java:500) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2e06bd: startup date [Sun Oct 28 22:08:41 MSK 2012]; root of context hierarchy
+ INFO [main] (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [applicationContext.xml]
+ INFO [main] (DefaultListableBeanFactory.java:581) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@189613a: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,marshaller,jaxb2Marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+ INFO [main] (Jaxb2Marshaller.java:436) - Creating JAXBContext with classes to be bound [class ru.retbansk.mail.domain.DayReport,class ru.retbansk.mail.domain.TaskReport]
+ INFO [main] (DynamicSchedule.java:80) - End of schedule. Next execution: Sun Oct 28 22:08:41 MSK 2012. Delay is: 00:01:00
+ INFO [scheduler-1] (SheduledProcess.java:48) - Start schedule. Reading Email...
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:212) - Invalid Day Report detected. Sending an error reply
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:249) - Report created - ./XmlReports/tester.testerovich@yandex.ru/report.from.28.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:249) - Report created - ./XmlReports/another.tester@yandex.ru/report.from.28.10.12.xml
+ INFO [scheduler-1] (ReadEmailAndConvertToXmlSpringImpl.java:115) - Sending confirmation emails
+ INFO [scheduler-1] (DynamicSchedule.java:80) - End of schedule. Next execution: Sun Oct 28 22:09:41 MSK 2012. Delay is: 00:01:00

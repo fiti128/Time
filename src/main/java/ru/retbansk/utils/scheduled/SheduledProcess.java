@@ -39,7 +39,8 @@ public class SheduledProcess implements Process {
 
 
 	/**
-	 * Process() method would be invoked every minute with a fixed delay, meaning that the period will be measured from the completion time of each preceding invocation
+	 * Process() method would be invoked every minute with a fixed delay, meaning that the period will be measured from the completion time of each preceding invocation.
+	 * <p> Configurable at runtime. 
 	 * @see ru.retbansk.utils.Process#process()
 	 * @see ru.retbansk.utils.scheduled.impl.ReadEmailAndConvertToXmlSpringImpl#execute()
 	 */

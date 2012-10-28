@@ -131,7 +131,7 @@ public class UsefulMethods {
      * For testing usage
      * Sending to mr.server.serverovich@yandex.ru four reports.
      * <p> One is invalid. Two from one email address
-     * @throws InterruptedException
+     * @throws InterruptedException I used Thread.sleep method in be ensure in the order of sending
      */
     public static void populate() throws InterruptedException {
 		JavaMailSenderImpl mailSender = new JavaMailSenderImpl();

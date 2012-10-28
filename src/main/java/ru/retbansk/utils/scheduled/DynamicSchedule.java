@@ -22,7 +22,11 @@ import org.apache.log4j.Logger;
 import org.springframework.scheduling.TaskScheduler;
 import org.springframework.scheduling.Trigger;
 import org.springframework.scheduling.TriggerContext;
-
+/**
+ * 
+ * @author Siarhei Yanusheuski
+ * @since 25.10.2012
+ */
 public class DynamicSchedule implements Trigger {
 	protected static Logger logger = Logger.getLogger("service");
 	   private TaskScheduler scheduler;

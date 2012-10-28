@@ -1,3 +1,18 @@
+/*
+ * Copyright 2002-2012 the original author.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package ru.retbansk.utils;
 
 import java.util.Properties;
@@ -9,6 +24,7 @@ import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 
+import ru.retbansk.mail.domain.DayReport;
 import ru.retbansk.mail.domain.Reply;
 
 public class ReplyManagerSimpleImpl implements ReplyManager {
@@ -48,6 +64,24 @@ public class ReplyManagerSimpleImpl implements ReplyManager {
         logger.error(ex.getMessage());
     }
     }
+	
+	public void sendError(DayReport dayReport) {
+		SimpleMailMessage msg = new SimpleMailMessage();
+		msg.setTo(dayReport.getPersonId());
+		msg.setReplyTo(dayReport.getPersonId());
+		msg.setFrom(user);
+		msg.setSubject("RE: " + (dayReport.getSubject() == null ? "" : dayReport.getSubject()));
+		msg.setText("This is an automated email. Do not reply.\n" +
+				"No valid reports were detected. Check your report.\nExample of valid reports:\n" +
+				"helping Google with Android, in process, 7\nmain job/ in process/1\nnothing actually. done. 3\n");
+		
+	    try{
+	        this.mailSender.send(msg);
+	    }
+	    catch(MailException ex) {
+	        logger.error(ex.getMessage());
+	    }
+	}
 	public JavaMailSenderImpl getMailSender() {
 		return mailSender;
 	}

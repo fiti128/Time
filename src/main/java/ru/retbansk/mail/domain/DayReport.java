@@ -106,6 +106,7 @@ public class DayReport implements Comparable<DayReport> {
 	public String getSubject() {
 		return subject;
 	}
+	@XmlTransient
 	public void setSubject(String subject) {
 		this.subject = subject;
 	}

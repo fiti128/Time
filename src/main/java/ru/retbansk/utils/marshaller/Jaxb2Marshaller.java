@@ -36,10 +36,10 @@ public class Jaxb2Marshaller implements Marshaller {
 	
 	public String marshal(Object object,File file) {
 		final StringWriter out = new StringWriter();
-		//Making our xml readable
-	HashMap<String,Boolean> map = new HashMap<String,Boolean>();
-	map.put(javax.xml.bind.Marshaller.JAXB_FORMATTED_OUTPUT, true);
-	marshaller.setMarshallerProperties(map);
+			//Making our xml readable
+		HashMap<String,Boolean> map = new HashMap<String,Boolean>();
+		map.put(javax.xml.bind.Marshaller.JAXB_FORMATTED_OUTPUT, true);
+		marshaller.setMarshallerProperties(map);
 		marshaller.marshal(object, new StreamResult(out));
 		
 		if (file != null) {

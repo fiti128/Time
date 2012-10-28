@@ -43,7 +43,9 @@ public class Jaxb2MarshallerTest {
 	private static final String MARSHALLED_DAYREPORT =
 		"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><DayReport personId=\"tr-legres@yandex.ru\"><Report><date>01-01-1981</date><elapsedTime>4</elapsedTime><status>in process</status><workDescription>helping Apple</workDescription></Report></DayReport>";
 		
-	private static String personId;
+	private static String PERSON_ID = "tr-legres@yandex.ru";
+	private static String STATUS = "in process";
+	private static String WORK_DESCRIPTION = "helping Apple";
 	
 	private static List<TaskReport> list;
 	
@@ -64,23 +66,22 @@ public class Jaxb2MarshallerTest {
 		date = calendar.getTime();
 		taskReport.setDate(date);
 		taskReport.setElapsedTime(4);
-		taskReport.setStatus("in process");
-		taskReport.setWorkDescription("helping Apple");
+		taskReport.setStatus(STATUS);
+		taskReport.setWorkDescription(WORK_DESCRIPTION);
 		list = new ArrayList<TaskReport>();
 		list.add(taskReport);
-			
-		personId = "tr-legres@yandex.ru";
+		
+		
 
 	}
 	
 	@Test
 	public void marshallPerson() {
 		DayReport dayReport = new DayReport();
-		dayReport.setPersonId(personId);
+		dayReport.setPersonId(PERSON_ID);
 		dayReport.setReportList(list);
 		
 		String xml = marshaller.marshal(dayReport,null);
-		System.out.println(xml);
 		Assert.assertNotNull(xml);
 		String prettyExpected = UsefulMethods.prettyFormat(MARSHALLED_DAYREPORT,4);
 		String prettyActual = UsefulMethods.prettyFormat(xml,4);

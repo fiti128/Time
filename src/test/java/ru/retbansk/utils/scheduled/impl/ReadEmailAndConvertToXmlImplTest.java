@@ -37,19 +37,20 @@ import org.junit.Test;
 
 import ru.retbansk.mail.domain.DayReport;
 import ru.retbansk.mail.domain.TaskReport;
+import ru.retbansk.utils.UsefulMethods;
 
 
 
 
 public class ReadEmailAndConvertToXmlImplTest {
 	public static String HOST = "pop.yandex.ru";
-	public static String USER = "kirill.iliashovitch@yandex.ru";
-	public static String USER2 = "tr-legres@rambler.ru";
-	public static String PASSWORD = "znich128";
+	public static String USER = "another.tester@yandex.ru";
+	public static String USER2 = "tester.testerovich@yandex.ru";
+	public static String PASSWORD = "server";
 	public static String PATH = "C:/XmlReports/";
-	public static String FILE_PATH = "C:/XmlReports/tr-legres@rambler.ru/report.from.18.10.12.xml";
+	public static String FILE_PATH = PATH + USER2 + "/report.from.18.10.12.xml";
 	public static String CONTINUE = "yes";
-	public static String TEST_STRING = "ел";
+	public static String TEST_STRING = "helping Google with Android";
 	public static String TEST_STRING2 = "nothing actually";
 	public static String BODY = "helping Google with Android, in process, 7\r\nAbrakadabraaaaaaaaaaaaaa tata\r\nnothing actually. done. 3";
 	public static ReadEmailAndConvertToXmlSpringImpl reader;
@@ -58,8 +59,14 @@ public class ReadEmailAndConvertToXmlImplTest {
 	
 	@BeforeClass
 	public static void beforeClass() {
+		 
 		reader = new ReadEmailAndConvertToXmlSpringImpl();
-				
+		try {
+			UsefulMethods.populate();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
 		DayReport dayReport = new DayReport();
 		dayReport.setPersonId(USER2);
 		Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+3"));
@@ -82,7 +89,6 @@ public class ReadEmailAndConvertToXmlImplTest {
 	public void loadPropertiesTest() throws Exception {
 		Properties testProperties = reader.loadProperties();
 		Assert.assertEquals(HOST, testProperties.getProperty("host"));
-		Assert.assertEquals(USER, testProperties.getProperty("user"));
 		Assert.assertEquals(PASSWORD, testProperties.getProperty("password"));
 		Assert.assertEquals(PATH, testProperties.getProperty("path"));
 		Assert.assertEquals(CONTINUE, testProperties.getProperty("continue"));
@@ -93,30 +99,27 @@ public class ReadEmailAndConvertToXmlImplTest {
 	public void readEmailTest() throws Exception {
 		HashSet<DayReport> daySet = reader.readEmail();
 		Assert.assertNotNull(daySet);
-		Assert.assertEquals(3, daySet.size());
-		DayReport fromLegres1 = null;
-		DayReport fromLegres2 = null;
-		DayReport fromKirill = null;
+		Assert.assertEquals(2, daySet.size());
+		DayReport fromTester = null;
+		DayReport fromAnotherTester = null;
 		SortedSet<DayReport> sortedDaySet = new TreeSet<DayReport>();
 		sortedDaySet.addAll(daySet);
+		Assert.assertEquals(2, sortedDaySet.size());
 		Iterator<DayReport> iterator = sortedDaySet.iterator();
 		while (iterator.hasNext()) {
-			fromLegres1 = iterator.next();
-			fromKirill = iterator.next();
-			fromLegres2 = iterator.next();
-					}
+			fromAnotherTester = iterator.next();
+			fromTester = iterator.next();
+								}
 		
-		Assert.assertNotNull(fromKirill);
-		Assert.assertNotNull(fromLegres1);
-		Assert.assertNotNull(fromLegres2);
-		Assert.assertEquals(USER2, fromLegres1.getPersonId());
-		Assert.assertEquals(USER2, fromLegres2.getPersonId());
-		Assert.assertEquals(USER, fromKirill.getPersonId());
-		Assert.assertEquals(2, fromLegres1.getReportList().size());
-		Assert.assertEquals(1, fromKirill.getReportList().size());
-		Assert.assertEquals(TEST_STRING, fromLegres1.getReportList().get(0).getWorkDescription());
-		Assert.assertEquals(4, fromKirill.getReportList().get(0).getElapsedTime());
-		Assert.assertEquals(TEST_STRING2, fromLegres2.getReportList().get(2).getWorkDescription());
+		Assert.assertNotNull(fromAnotherTester);
+		Assert.assertNotNull(fromTester);
+		Assert.assertEquals(USER2, fromTester.getPersonId());
+		Assert.assertEquals(USER, fromAnotherTester.getPersonId());
+		Assert.assertEquals(3, fromTester.getReportList().size());
+		Assert.assertEquals(1, fromAnotherTester.getReportList().size());
+		Assert.assertEquals(TEST_STRING, fromTester.getReportList().get(0).getWorkDescription());
+		Assert.assertEquals(8, fromAnotherTester.getReportList().get(0).getElapsedTime());
+		Assert.assertEquals(TEST_STRING2, fromTester.getReportList().get(2).getWorkDescription());
 		
 	}
 /*
@@ -150,3 +153,4 @@ public class ReadEmailAndConvertToXmlImplTest {
 		}
 	}
 }
+

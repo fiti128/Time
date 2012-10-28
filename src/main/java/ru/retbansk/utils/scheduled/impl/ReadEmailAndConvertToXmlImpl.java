@@ -20,8 +20,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -44,12 +43,11 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 
 import org.apache.log4j.Logger;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 
 import ru.retbansk.mail.domain.DayReport;
 import ru.retbansk.mail.domain.TaskReport;
-import ru.retbansk.utils.marshaller.Jaxb2Marshaller;
+
 import ru.retbansk.utils.scheduled.ReadEmailAndConvertToXml;
 
 public class ReadEmailAndConvertToXmlImpl implements ReadEmailAndConvertToXml {

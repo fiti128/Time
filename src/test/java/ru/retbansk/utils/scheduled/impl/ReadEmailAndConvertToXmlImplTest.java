@@ -41,7 +41,11 @@ import ru.retbansk.utils.UsefulMethods;
 
 
 
-
+/**
+ * 
+ * @author Siarhei Yanusheuski
+ * @since 25.10.2012
+ */
 public class ReadEmailAndConvertToXmlImplTest {
 	public static String HOST = "pop.yandex.ru";
 	public static String USER = "another.tester@yandex.ru";

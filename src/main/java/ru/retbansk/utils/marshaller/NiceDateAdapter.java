@@ -19,7 +19,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.xml.bind.annotation.adapters.XmlAdapter;
-
+/**
+ * 
+ * @author Siarhei Yanusheuski
+ * @since 25.10.2012
+ */
 public class NiceDateAdapter extends XmlAdapter<String, Date> {
 	SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
 

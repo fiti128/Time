@@ -34,7 +34,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import ru.retbansk.mail.domain.DayReport;
 import ru.retbansk.mail.domain.TaskReport;
 import ru.retbansk.utils.UsefulMethods;
-
+/**
+ * 
+ * @author Siarhei Yanusheuski
+ * @since 25.10.2012
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {
 		"classpath:applicationContext.xml"})

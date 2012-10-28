@@ -17,7 +17,11 @@
 package ru.retbansk.utils.marshaller;
 
 import java.io.File;
-
+/**
+ * 
+ * @author Siarhei Yanusheuski
+ * @since 25.10.2012
+ */
 public interface Marshaller {
 
 	String marshal(Object object, File file);

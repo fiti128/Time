@@ -52,14 +52,17 @@ import ru.retbansk.mail.domain.DayReport;
 import ru.retbansk.mail.domain.Reply;
 
 import ru.retbansk.mail.domain.TaskReport;
-import ru.retbansk.utils.ReplyManager;
-import ru.retbansk.utils.ReplyManagerSimpleImpl;
 import ru.retbansk.utils.marshaller.Jaxb2Marshaller;
 import ru.retbansk.utils.marshaller.Marshaller;
 
 import ru.retbansk.utils.scheduled.ReadEmailAndConvertToXml;
+import ru.retbansk.utils.scheduled.ReplyManager;
 
-
+/**
+ * 
+ * @author Siarhei Yanusheuski
+ * @since 25.10.2012
+ */
 public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertToXml {
 	protected static Logger logger = Logger.getLogger("service");
 	private String path;

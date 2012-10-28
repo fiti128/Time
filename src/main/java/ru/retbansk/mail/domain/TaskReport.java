@@ -22,14 +22,26 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import ru.retbansk.utils.marshaller.NiceDateAdapter;
-
+/**
+ * Sub report of the Day Report.
+ * Date have pretty format
+ * 
+ * @author Siarhei Yanusheuski
+ * @since 25.10.2012
+ * @see ru.retbansk.mail.domain.DayReport
+ * @see ru.retbansk.mail.domain.TaskReport#getDate()
+ */
 @XmlRootElement(name = "Report")
 public class TaskReport {
 	private Date date;
 	private String workDescription;
 	private String status;
 	private int elapsedTime;
-
+	/**
+	 * Using adapter for pretty look
+	 * @see ru.retbansk.utils.marshaller.NiceDateAdapter
+	 * @return Date
+	 */
 	@XmlJavaTypeAdapter(NiceDateAdapter.class)
 	public Date getDate() {
 		return date;

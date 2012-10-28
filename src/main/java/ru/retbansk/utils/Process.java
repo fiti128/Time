@@ -15,7 +15,11 @@
  */
 
 package ru.retbansk.utils;
-
+/**
+ * 
+ * @author Siarhei Yanusheuski
+ * @since 25.10.2012
+ */
 public interface Process {
 	public void process();
 }

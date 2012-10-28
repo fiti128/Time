@@ -13,11 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ru.retbansk.utils;
+package ru.retbansk.utils.scheduled.impl;
 
 import java.util.Properties;
-
-import javax.mail.internet.InternetAddress;
 
 import org.apache.log4j.Logger;
 import org.springframework.mail.MailException;
@@ -26,7 +24,13 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 
 import ru.retbansk.mail.domain.DayReport;
 import ru.retbansk.mail.domain.Reply;
-
+import ru.retbansk.utils.UsefulMethods;
+import ru.retbansk.utils.scheduled.ReplyManager;
+/**
+ * 
+ * @author Siarhei Yanusheuski
+ * @since 25.10.2012
+ */
 public class ReplyManagerSimpleImpl implements ReplyManager {
 	protected static Logger logger = Logger.getLogger("service");
 	private JavaMailSenderImpl mailSender = new JavaMailSenderImpl();

@@ -49,7 +49,11 @@ import ru.retbansk.mail.domain.DayReport;
 import ru.retbansk.mail.domain.TaskReport;
 
 import ru.retbansk.utils.scheduled.ReadEmailAndConvertToXml;
-
+/**
+ * 
+ * @author Siarhei Yanusheuski
+ * @since 25.10.2012
+ */
 public class ReadEmailAndConvertToXmlImpl implements ReadEmailAndConvertToXml {
 	protected static Logger logger = Logger.getLogger("service");
 	private String path;

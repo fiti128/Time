@@ -13,11 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ru.retbansk.utils;
+package ru.retbansk.utils.scheduled;
 
 import ru.retbansk.mail.domain.DayReport;
 import ru.retbansk.mail.domain.Reply;
-
+/**
+ * 
+ * @author Siarhei Yanusheuski
+ * @since 25.10.2012
+ */
 public interface ReplyManager {
 	public void placeReply(Reply reply) throws Exception;
 	public void sendError(DayReport dayReport) throws Exception;

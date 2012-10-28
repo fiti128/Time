@@ -10,7 +10,6 @@
 	
 
 	<context:component-scan base-package="ru.retbansk.utils.scheduled"/>
-	<context:component-scan base-package="ru.retbansk.utils.scheduled.impl"/>
    
 	<task:annotation-driven/>
 	

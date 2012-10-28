@@ -14,7 +14,13 @@
  * limitations under the License.
  */
 package ru.retbansk.mail.domain;
-
+/**
+ * Class helper.Is using to support sending confirmation replies class.
+ * <p> Nothing special at all. In future will rewrite or will use another class
+ * 
+ * @author Siarhei Yanusheuski
+ * @since 25.10.2012
+ */
 public class Reply {
 
 	private String emailAddress;

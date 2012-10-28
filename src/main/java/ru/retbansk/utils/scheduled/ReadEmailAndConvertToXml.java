@@ -20,7 +20,11 @@ import java.util.HashSet;
 import java.util.Properties;
 
 import ru.retbansk.mail.domain.DayReport;
-
+/**
+ * 
+ * @author Siarhei Yanusheuski
+ * @since 25.10.2012
+ */
 public interface ReadEmailAndConvertToXml {
 	public void execute() throws Exception;
 	public HashSet<DayReport> readEmail() throws Exception;

@@ -15,28 +15,36 @@
  */
 package ru.retbansk.utils.scheduled;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import ru.retbansk.utils.UsefulMethods;
-
+/**
+ * Additional thread to provide runtime configuration
+ * 
+ * @author Siarhei Yanusheuski
+ * @since 25.10.2012
+ * @see ru.retbansk.utils.scheduled.DynamicSchedule
+ */
 @Component
 public class ScheduleChanger {
-
+	protected static Logger logger = Logger.getLogger("service");
 	@Autowired
 	private DynamicSchedule dynamicSchedule;
-
+/**
+ * Scheduled task with fixed delay - 3 seconds
+ * @see ru.retbansk.utils.scheduled.DynamicSchedule#setDelay(int)
+ */
    @Scheduled(fixedDelay=3000)
    public void change() {
 	  try {
 		dynamicSchedule.setDelay(Integer.valueOf(UsefulMethods.loadProperties().getProperty("schedule")).intValue());
 	} catch (NumberFormatException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
+		logger.error(e.getMessage());
 	} catch (Exception e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
+		logger.error(e.getMessage());
 	}
      
    }

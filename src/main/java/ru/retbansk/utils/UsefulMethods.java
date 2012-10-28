@@ -33,7 +33,11 @@ import javax.xml.transform.stream.StreamSource;
 import org.apache.log4j.Logger;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
-
+/**
+ * 
+ * @author Siarhei Yanusheuski
+ * @since 25.10.2012
+ */
 public class UsefulMethods {
 	protected static Logger logger = Logger.getLogger("service");
 	public static Properties loadProperties() throws Exception {

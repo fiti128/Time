@@ -27,9 +27,11 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 /**
- * 
+ * Implementation of the Jaxb2Marshaller with spring. Have only one method <code>marshal</code>
+ * that marshals a valid Day Report into the File and returns pretty formatted xml String
  * @author Siarhei Yanusheuski
  * @since 25.10.2012
+ * @see #marshal(Object, File)
  */
 @Component(value="marshaller")
 public class Jaxb2Marshaller implements Marshaller {
@@ -37,7 +39,12 @@ public class Jaxb2Marshaller implements Marshaller {
 	@Autowired
 	@Qualifier(value="jaxb2Marshaller")
 	private org.springframework.oxm.jaxb.Jaxb2Marshaller marshaller;
-	
+	/**
+	 * Marshals our valid Day Report into the File and returns pretty formatted xml String
+	 * @param file Name of the xml file to be created or rewritten
+	 * @param object Valid Day Report
+	 * @return Formatted xml String
+	 */
 	public String marshal(Object object,File file) {
 		final StringWriter out = new StringWriter();
 			//Making our xml readable

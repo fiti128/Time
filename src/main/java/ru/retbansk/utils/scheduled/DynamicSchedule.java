@@ -23,7 +23,8 @@ import org.springframework.scheduling.TaskScheduler;
 import org.springframework.scheduling.Trigger;
 import org.springframework.scheduling.TriggerContext;
 /**
- * 
+ * Name tells everything. Its dynamic schedule. It is used to provide runtime configuration of the schedule. 
+ * Main method is <code>setDelay(int delay)</code>. It automatically restarts schedule if the new delay is less than the old one. Or waits the next schedule if the new delay is greater 
  * @author Siarhei Yanusheuski
  * @since 25.10.2012
  */
@@ -33,12 +34,22 @@ public class DynamicSchedule implements Trigger {
 	   private Runnable task;
 	   private int delay;
 	   private ScheduledFuture<?> scheduledFuture;
-
+/**
+ * Immediately restarts schedule at initializing
+ * @param scheduler
+ * @param task
+ * @param delay Milliseconds (1000 = 1 second)
+ */
 	   public DynamicSchedule(TaskScheduler scheduler, Runnable task, int delay) {
 	      this.scheduler = scheduler;
 	      this.task = task;
 	      reset(delay);
 	   }
+	   /**
+	    * Returns pretty output of milliseconds
+	    * @param milisec Milliseconds (1000 = 1 second)
+	    * @return pretty String with the view like 00:00:00
+	    */
 	   public String getElapsedTimeHoursMinutesSecondsString(int milisec) {
 		   int time = milisec/1000;
 		   String seconds = Integer.toString((int)(time % 60));  
@@ -58,6 +69,10 @@ public class DynamicSchedule implements Trigger {
 		   String timeString =  hours + ":" + minutes + ":" + seconds; 
 		   return timeString;
 	   }
+	   /**
+	    * It automatically restarts schedule if the new delay is less than the old one. Or waits the next schedule if the new delay is greater 
+	    * @param delay Milliseconds (1000 = 1 second)
+	    */
 	   public void setDelay(int delay) {
 		   if (delay != this.delay) logger.info("New delay is: "+getElapsedTimeHoursMinutesSecondsString(delay)); 
 		   if (delay < this.delay) {
@@ -66,11 +81,17 @@ public class DynamicSchedule implements Trigger {
 		   }
 		   this.delay = delay;
 	   }
+	   /**
+	    * Immediately restarts schedule
+	    * @param delay Milliseconds (1000 = 1 second)
+	    */
 	   public void reset(int delay) {
 	      this.delay = delay;
           scheduledFuture = scheduler.schedule(task, this);
 	   }
-
+	   /**
+	    * @return Date next execution of the schedule
+	    */
 	   @Override
 	   public Date nextExecutionTime(TriggerContext triggerContext) {
 	      Date lastTime = triggerContext.lastActualExecutionTime();

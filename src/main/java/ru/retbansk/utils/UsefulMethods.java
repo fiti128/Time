@@ -34,7 +34,10 @@ import org.apache.log4j.Logger;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 /**
- * 
+ * Includes three static methods. See bellow
+ * @see #populate()
+ * @see #loadProperties()
+ * @see #prettyFormat(String)
  * @author Siarhei Yanusheuski
  * @since 25.10.2012
  */

@@ -17,6 +17,7 @@ package ru.retbansk.utils.scheduled;
 
 import ru.retbansk.mail.domain.DayReport;
 import ru.retbansk.mail.domain.Reply;
+
 /**
  * 
  * @author Siarhei Yanusheuski
@@ -24,5 +25,6 @@ import ru.retbansk.mail.domain.Reply;
  */
 public interface ReplyManager {
 	public void placeReply(Reply reply) throws Exception;
+
 	public void sendError(DayReport dayReport) throws Exception;
 }

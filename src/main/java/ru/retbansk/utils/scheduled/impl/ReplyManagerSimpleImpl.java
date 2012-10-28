@@ -1,5 +1,5 @@
 /*
- * Copyright 2002-2012 the original author.
+ * Copyright 2012 the original author.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,14 +27,21 @@ import ru.retbansk.mail.domain.Reply;
 import ru.retbansk.utils.UsefulMethods;
 import ru.retbansk.utils.scheduled.ReplyManager;
 /**
+ * Utility class that provide sending email methods
  * 
  * @author Siarhei Yanusheuski
  * @since 25.10.2012
+ * @see ReplyManagerSimpleImpl#sendError(DayReport)
+ * @see ReplyManagerSimpleImpl#placeReply(Reply)
  */
 public class ReplyManagerSimpleImpl implements ReplyManager {
 	protected static Logger logger = Logger.getLogger("service");
 	private JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
 	private String user;
+	/**
+	 * Refreshing mailSender to provide runtime configuration
+	 * @throws Exception
+	 */
 	public ReplyManagerSimpleImpl() throws Exception {
 		Properties props = UsefulMethods.loadProperties();
 		mailSender.setHost(props.getProperty("host.send"));
@@ -45,6 +52,12 @@ public class ReplyManagerSimpleImpl implements ReplyManager {
 		user = props.getProperty("user");
 		
 	}
+	/**
+	 * Send a confirmation email of a valid day report.
+	 * Includes xml readable string of it.
+	 * @see org.springframework.mail.SimpleMailMessage
+	 * @see org.springframework.mail.javamail.JavaMailSenderImpl
+	 */
 	@Override
 	public void placeReply(Reply reply) throws Exception {
 
@@ -68,7 +81,12 @@ public class ReplyManagerSimpleImpl implements ReplyManager {
         logger.error(ex.getMessage());
     }
     }
-	
+	/**
+	 * Send an error email of a not valid day report.
+	 * 
+	 * @see org.springframework.mail.SimpleMailMessage
+	 * @see org.springframework.mail.javamail.JavaMailSenderImpl
+	 */
 	public void sendError(DayReport dayReport) {
 		SimpleMailMessage msg = new SimpleMailMessage();
 		msg.setTo(dayReport.getPersonId());

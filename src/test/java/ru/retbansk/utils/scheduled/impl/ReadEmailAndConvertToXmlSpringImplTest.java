@@ -1,5 +1,5 @@
 /*
- * Copyright 2002-2012 the original author.
+ * Copyright 2012 the original author.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -131,9 +131,10 @@ public class ReadEmailAndConvertToXmlSpringImplTest  {
 		Assert.assertEquals(TEST_STRING2, fromTester.getReportList().get(2).getWorkDescription());
 		
 	}
-/*
+/**
  * Just testing the file creation.
  * Marshalling is tested in Jaxb2MarshallerTest
+ * 
  */
 	@Test
 	public void createFileTest() throws Exception {

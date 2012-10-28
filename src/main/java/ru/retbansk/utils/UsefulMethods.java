@@ -1,5 +1,5 @@
 /*
- * Copyright 2002-2012 the original author.
+ * Copyright 2012 the original author.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,14 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
  */
 public class UsefulMethods {
 	protected static Logger logger = Logger.getLogger("service");
+	/** Simple loading properties from email.properties file.
+	 * <p> At first, program will try to read external properties.
+	 * If nothing there - internal
+	 * <p> Implements user exit
+	 * 
+	 * @return java.util.Properties;
+	 * @throws Exception
+	 */
 	public static Properties loadProperties() throws Exception {
 		Properties prop = new Properties();
 		InputStream inputStream = null;
@@ -68,6 +76,14 @@ public class UsefulMethods {
 		}
 		return prop;
 	}
+	/**
+	 * For testing usage. Take unformatted xml string. Return pretty readable xml string
+	 * 
+	 * @param input take unformatted xml string
+	 * @param indent a number of white spaces before each line
+	 * @return pretty readable xml string
+	 */
+	
 	public static String prettyFormat(String input, int indent) {
         try
         {
@@ -111,7 +127,12 @@ public class UsefulMethods {
     public static String prettyFormat(String input) {
         return prettyFormat(input, 2);
     }
-    
+    /**
+     * For testing usage
+     * Sending to mr.server.serverovich@yandex.ru four reports.
+     * <p> One is invalid. Two from one email address
+     * @throws InterruptedException
+     */
     public static void populate() throws InterruptedException {
 		JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
 		SimpleMailMessage msg = new SimpleMailMessage();

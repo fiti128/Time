@@ -1,5 +1,5 @@
 /*
- * Copyright 2002-2012 the original author.
+ * Copyright 2012 the original author.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,7 +70,14 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 	private Marshaller marshaller = (Jaxb2Marshaller) context.getBean("marshaller");
 	private List<Reply> replyList = new ArrayList<Reply>();
 
-	
+	/** Simple loading properties from email.properties file.
+	 * <p> At first, program will try to read external properties.
+	 * If nothing there - internal
+	 * <p> Implements user exit
+	 * 
+	 * @return java.util.Properties;
+	 * @throws Exception
+	 */
 	public Properties loadProperties() throws Exception {
 		Properties prop = new Properties();
 		InputStream inputStream = null;

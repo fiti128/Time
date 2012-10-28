@@ -75,7 +75,7 @@ public class ReadEmailAndConvertToXmlSpringImpl implements ReadEmailAndConvertTo
 	 * If nothing there - internal
 	 * <p> Implements user exit
 	 * 
-	 * @return java.util.Properties;
+	 * @return email.properties from folder with jar, if nothing there - from classpath
 	 * @throws Exception
 	 */
 	public Properties loadProperties() throws Exception {

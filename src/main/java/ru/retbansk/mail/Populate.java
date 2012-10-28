@@ -1,4 +1,4 @@
-package ru.retbansk.mail.domain;
+package ru.retbansk.mail;
 
 
 
@@ -13,7 +13,7 @@ import ru.retbansk.utils.UsefulMethods;
  * @author Siarhei Yanusheuski
  * @since 25.10.2012
  */
-public class Test {
+public class Populate {
 
 	/**
 	 * @param args

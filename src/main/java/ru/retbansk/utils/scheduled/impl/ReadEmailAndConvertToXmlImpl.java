@@ -26,11 +26,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Properties;
 import java.util.TimeZone;
 
+import javax.mail.Flags;
 import javax.mail.Folder;
 import javax.mail.Message;
 import javax.mail.Multipart;
@@ -46,9 +48,11 @@ import org.apache.log4j.Logger;
 
 
 import ru.retbansk.mail.domain.DayReport;
+import ru.retbansk.mail.domain.Reply;
 import ru.retbansk.mail.domain.TaskReport;
 
 import ru.retbansk.utils.scheduled.ReadEmailAndConvertToXml;
+import ru.retbansk.utils.scheduled.ReplyManager;
 /**
  * 
  * @author Siarhei Yanusheuski
@@ -57,8 +61,16 @@ import ru.retbansk.utils.scheduled.ReadEmailAndConvertToXml;
 public class ReadEmailAndConvertToXmlImpl implements ReadEmailAndConvertToXml {
 	protected static Logger logger = Logger.getLogger("service");
 	private String path;
+	private List<Reply> replyList = new ArrayList<Reply>();
 
-
+	/** Simple loading properties from email.properties file.
+	 * <p> At first, program will try to read external properties.
+	 * If nothing there - internal
+	 * <p> Implements user exit
+	 * 
+	 * @return email.properties from folder with jar, if nothing there - from classpath
+	 * @throws Exception
+	 */
 	public Properties loadProperties() throws Exception {
 		Properties prop = new Properties();
 		InputStream inputStream = null;
@@ -76,6 +88,7 @@ public class ReadEmailAndConvertToXmlImpl implements ReadEmailAndConvertToXml {
 		prop.load(inputStream);
 		if (inputStream != null)
 			inputStream.close();
+		// Implementing user exit
 		try {
 			if (prop.getProperty("continue").equals("no")){
 				logger.info("Program was stopped by the User");
@@ -86,13 +99,36 @@ public class ReadEmailAndConvertToXmlImpl implements ReadEmailAndConvertToXml {
 		}
 		return prop;
 	}
-
+	/**
+	 * Method execute actually does the entire job:
+	 * loads email properties, reads email, converts valid ones into xml files and send confirmation emails.
+	 * @see #readEmail()
+	 * @see #convertToXml(HashSet)
+	 * @see ru.retbansk.utils.scheduled.ReplyManager
+	 * 
+	 */
 	@Override
 	public void execute() throws Exception {
 		convertToXml(readEmail());
+		ReplyManager man = new ReplyManagerSimpleImpl();
+		String info = replyList.size() > 0 ? "Sending confirmation emails" : "No reports detected";
+		logger.info(info);
+		for (Reply reply1 : replyList) {
+			man.placeReply(reply1);
+		}
+		replyList.clear();
 
 	}
-
+	/**
+	 * Loads email properties, reads email messages, 
+	 * converts their multipart bodies into string,
+	 * send error emails if message doesn't contain valid report and at last returns a reversed Set of the Valid Reports
+	 * <p><b> deletes messages
+	 * @see #readEmail()
+	 * @see #convertToXml(HashSet)
+	 * @see ru.retbansk.utils.scheduled.ReplyManager
+	 * @return HashSet<DayReport> of the Valid Day Reports
+	 */
 	@Override
 	public HashSet<DayReport> readEmail() throws Exception {
 
@@ -119,86 +155,102 @@ public class ReadEmailAndConvertToXmlImpl implements ReadEmailAndConvertToXml {
 		Folder folder = store.getFolder("inbox");
 
 		// Open the Folder.
-		folder.open(Folder.READ_ONLY);
-
-		Message[] message = folder.getMessages();
-		Collections.reverse(Arrays.asList(message));
+		folder.open(Folder.READ_WRITE);
 		HashSet<DayReport> dayReportSet = new HashSet<DayReport>();
+		try {
+			
+		// Getting messages from the folder
+		Message[] message = folder.getMessages();
+		// Reversing the order in the array with the use of Set to make the last one final
+		Collections.reverse(Arrays.asList(message));
 
-		// Display message.
+
+		// Reading messages.
 		String body;
 		for (int i = 0; i < message.length; i++) {
 			DayReport dayReport = null;
 			dayReport = new DayReport();
 			dayReport.setPersonId(((InternetAddress) message[i].getFrom()[0])
 					.getAddress());
-			Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT"));
+			Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+3"));
 			calendar.setTime(message[i].getSentDate());
 			dayReport.setCalendar(calendar);
-			TaskReport report = null;
+			dayReport.setSubject(message[i].getSubject());
 			List<TaskReport> reportList = null;
-			reportList = new ArrayList<TaskReport>();
 			
+			//Release the string from email message body
 			body = "";
 			Object content = message[i].getContent();
 			if (content instanceof java.lang.String) {
 				body = (String) content;
-			} else if (content instanceof Multipart) {
-				Multipart mp = (Multipart) content;
-
-				for (int j = 0; j < mp.getCount(); j++) {
-					Part part = mp.getBodyPart(j);
-
-					String disposition = part.getDisposition();
-
-					if (disposition == null) {
-						// Check if plain
-						MimeBodyPart mbp = (MimeBodyPart) part;
-						if (mbp.isMimeType("text/plain")) {
-							// Log.Debug("Mime type is plain");
+				} else if (content instanceof Multipart) {
+					Multipart mp = (Multipart) content;
+	
+					for (int j = 0; j < mp.getCount(); j++) {
+						Part part = mp.getBodyPart(j);
+	
+						String disposition = part.getDisposition();
+	
+						if (disposition == null) {
+							MimeBodyPart mbp = (MimeBodyPart) part;
+							if (mbp.isMimeType("text/plain")) {
 							body += (String) mbp.getContent();
-						}
-					} else if ((disposition != null)
-							&& (disposition.equals(Part.ATTACHMENT) || disposition
-									.equals(Part.INLINE))) {
-						// Check if plain
+							}
+						} else if ((disposition != null)
+								&& (disposition.equals(Part.ATTACHMENT) || disposition
+										.equals(Part.INLINE))) {
 						MimeBodyPart mbp = (MimeBodyPart) part;
-						if (mbp.isMimeType("text/plain")) {
-							// Log.Debug("Mime type is plain");
-							body += (String) mbp.getContent();
+							if (mbp.isMimeType("text/plain")) {
+								body += (String) mbp.getContent();
+							}
 						}
 					}
 				}
-			}
-
-			String lines[] = body.split("[\\r\\n]+");
-
-			for (String string : lines) {
-				if (string.matches(".+,.+,.+")) {
-					String split[] = string.split(",");
-					report = new TaskReport();
-					report.setDate(message[i].getSentDate());
-					report.setWorkDescription(split[0].trim());
-					report.setStatus(split[1].trim());
-					report.setElapsedTime(Integer.valueOf(split[2].trim())
-							.intValue());
-					reportList.add(report);
+			
+			//Put the string (body of email message) and get list of valid reports else send error
+			reportList = new ArrayList<TaskReport>();
+			reportList = giveValidReports(body, message[i].getSentDate());
+			//Check for valid day report. To be valid it should have size of reportList > 0.
+			if (reportList.size() > 0) {
+				// adding valid ones to Set
+				dayReport.setReportList(reportList);
+				dayReportSet.add(dayReport);
 				}
+			else {
+				// This message doesn't have valid reports. Sending an error reply.
+				logger.info("Invalid Day Report detected. Sending an error reply");
+				ReplyManager man = new ReplyManagerSimpleImpl();
+				man.sendError(dayReport);
+				}
+			// Delete message
+			message[i].setFlag(Flags.Flag.DELETED, true); 
 			}
-			dayReport.setReportList(reportList);
-			dayReportSet.add(dayReport);
+		
+		}
+		finally {
+			// true tells the mail server to expunge deleted messages.
+			folder.close(true); 
+    		store.close();
 		}
 		
 		return dayReportSet;
 	}
-
+	/**
+	 * Converts a Set of the Valid Reports into xml and write into the files. 1 file per 1 DayReport
+	 * <p> Overwrites files with the same date from the same person
+	 * @param dayReportSet HashSet with the valid Day Reports only
+	 * @throws Exception
+	 */
 	@Override
 	public void convertToXml(HashSet<DayReport> dayReportSet) throws Exception {
 		Properties prop = loadProperties();
+		File dir;
+		File file;
+		String xml;
+		
+		// Writing file for every DayReport in Set
 		for (DayReport dayReport : dayReportSet) {
 			path = prop.getProperty("path");
-			File dir = null;
-			File file = null;
 			path += dayReport.getPersonId();
 			dir = new File(path);
 			if (!dir.exists()) {
@@ -218,7 +270,63 @@ public class ReadEmailAndConvertToXmlImpl implements ReadEmailAndConvertToXml {
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 		m.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
 		m.marshal(dayReport, file);
+		Reply reply = new Reply();
+		reply.setXml(xml);
+		reply.setEmailAddress(dayReport.getPersonId());
+		reply.setValidNumber(dayReport.getReportList().size());
+		reply.setSubject(dayReport.getSubject());
+		replyList.add(reply);
+		
+	}
+}
+/**
+ * Validation method. Patterns used:
+ * <p>.+,.+,[\\d|\\s]{1,3}  
+ * <p>.+[.].+[.][\\d|\\s]{1,3} 
+ * <p>.+[/].+[/][\\d|\\s]{1,3}
+ * @param body String released from email message body
+ * @param reportDate Date from email message. All sub-reports will have the same Date as DayReport
+ * @return Returns a List of valid sub-reports  
+ */
+public List<TaskReport> giveValidReports(String body, Date reportDate) {
+	List<TaskReport> reportList = new ArrayList<TaskReport>();
+	TaskReport report;
+	String lines[] = body.split("[\\r\\n]+");
 
+	for (String string : lines) {
+		if (string.matches(".+,.+,[\\d|\\s]{1,3}")) {
+			String split[] = string.split(",");
+			report = new TaskReport();
+			report.setDate(reportDate);
+			report.setWorkDescription(split[0].trim());
+			report.setStatus(split[1].trim());
+			report.setElapsedTime(Integer.valueOf(split[2].trim())
+					.intValue());
+			reportList.add(report);
+		}
+		if (string.matches(".+[.].+[.][\\d|\\s]{1,3}")) {
+			String split[] = string.split("\\.");
+			report = new TaskReport();
+			report.setDate(reportDate);
+			report.setWorkDescription(split[0].trim());
+			report.setStatus(split[1].trim());
+			report.setElapsedTime(Integer.valueOf(split[2].trim())
+					.intValue());
+			reportList.add(report);
+		}
+		if (string.matches(".+[/].+[/][\\d|\\s]{1,3}")) {
+			String split[] = string.split("/");
+			report = new TaskReport();
+			report.setDate(reportDate);
+			report.setWorkDescription(split[0].trim());
+			report.setStatus(split[1].trim());
+			report.setElapsedTime(Integer.valueOf(split[2].trim())
+					.intValue());
+			reportList.add(report);
+		}
 	}
-	}
+	return reportList;
+}
+
+
 }

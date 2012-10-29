@@ -22,7 +22,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * Main class that starts everything. 
  * <p>First point of the program. Run ScheduledProcess
  * 
- *
  * @author Siarhei Yanusheuski
  * @since 25.10.2012
  * @see ru.retbansk.utils.scheduled.SheduledProcess
@@ -34,8 +33,7 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 
-				new ClassPathXmlApplicationContext("scheduledConfig.xml", Main.class);
-
+		new ClassPathXmlApplicationContext("scheduledConfig.xml", Main.class);
 
 	}
 
